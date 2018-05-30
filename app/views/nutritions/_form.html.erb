@@ -1,0 +1,16 @@
+<div style="margin-top:150px;  max-width: 600px;padding-left:50px; padding-right:50px;">
+  <%= bootstrap_form_for @nutrition do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.text_field :name, label: "제품명", :required => true %>
+      <%= f.text_field :brand, label: "브랜드" ,:required => true%>
+      <%= f.text_field :character,    label: "섭취법", placeholder: "하루 한알!",:required => true%>
+      <%= f.text_area :function, label: "효과", placeholder: "ex) 0.5 - 2.0",:required => true %>
+      <%= f.text_area :precaution, label: "주의사항" ,:required => true%>
+      <div class="h-container">
+        <div style="margin-top:40px;"></div>
+        <button type="submit" class="btn btn-secondary" id="marketenroll">등록하기</button>
+      <button type="button" class="btn btn-secondary" id="marketenroll" onclick="location.href='/fleemarkets';" >뒤로가기</button>
+      </div>
+  <% end %>
+</div>
+</div>
