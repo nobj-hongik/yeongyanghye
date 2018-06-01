@@ -3,8 +3,16 @@ class NutritionsController < ApplicationController
 
   # GET /nutritions
   # GET /nutritions.json
+  
   def index
-    @nutritions = Nutrition.all
+    
+    if params[:function]
+      @function = params[:function]
+      @nutritions = Nutrition.where(:function => @function).order('created_at DESC')
+    else  
+      @nutritions = Nutrition.all
+    end
+    
   end
 
   # GET /nutritions/1

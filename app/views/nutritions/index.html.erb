@@ -1,33 +1,108 @@
-<h1>영양제 목록</h1>
+<div class="container checkfunction">
+  <form action="/nutritions" class="nutritionform">
+    <ul style="padding-left:25%; margin-bottom:0;">
+      <li>
+        <input type="checkbox" id="makeblood" value="혈액생성" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="makeblood" >혈액생성</label>
+      </li>
+      <li>
+        <input type="checkbox" id="condition" value="피로개선" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="condition">피로개선</label>
+      </li>
+      <li>
+        <input type="checkbox" id="energy" value="에너지" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="energy">에너지</label>
+      </li> 
+      <li>
+        <input type="checkbox" value="배변" id="enterocinesia" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="enterocinesia">배변</label>
+      </li>    
+      <li>
+        <input type="checkbox" value="세포보호" id="protectcell" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="protectcell">세포보호</label>
+      </li>
+      <li>
+        <input type="checkbox" value="피부" id="skin" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="skin" >피부</label>
+      </li>     
+    </ul>
+    <ul style="padding-left:25%;">
+      <li>
+        <input type="checkbox" value="면역력" id="immunity" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="immunity">면역력</label>
+      </li>
+      <li>
+        <input type="checkbox" value="시력" id="vision" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="vision">시력</label>
+      </li>
+      <li>
+        <input type="checkbox" value="뼈" id="bone" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="bone" >뼈</label>
+      </li> 
+      <li>
+        <input type="checkbox" value="혈액응고" id="coagulateblood" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="coagulateblood" >혈액응고</label>
+      </li>    
+      <li>
+        <input type="checkbox" value="모발" id="hair" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="hair">모발</label>
+      </li>    
+      <li>
+        <input type="checkbox" value="간건강" id="liver" class="checkboxinput" name="function">
+        <label class="checkboxlabel" for="liver" >간건강</label>
+      </li>     
+    </ul>  
+    <button type ="submit" value="submit" class="nutritionform" style="margin-left:50%">조회하기</button>
+  </form>
+  <hr>
+</div>
+<div class="container nutritioncontainer">
+  <h1>Recommended for you</h1>  
+  <div class="table-responsive">
+      <table class="table table-fit">
+          <thead>
+              <tr>
+                  <th>영양제 이름</th>
+                  <th>기능</th>
+              </tr>
+          </thead>
+          <tbody>
+              <% @nutritions.each do |nutrition| %>
+              <tr>
+                  <td style="width:10rem;"><%= link_to nutrition.name, nutrition %></td>
+                  <td><%= nutrition.function%></td>
+              </tr>
+              <% end %>
+          </tbody>
+      </table>
+  </div>
+  <%= link_to '영양제 등록하기', new_nutrition_path %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Brand</th>
-      <th>Character</th>
-      <th>Function</th>
-      <th>Precaution</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<style>
 
-  <tbody>
-    <% @nutritions.each do |nutrition| %>
-      <tr>
-        <td><%= nutrition.name %></td>
-        <td><%= nutrition.brand %></td>
-        <td><%= nutrition.character %></td>
-        <td><%= nutrition.function %></td>
-        <td><%= nutrition.precaution %></td>
-        <td><%= link_to 'Show', nutrition %></td>
-        <td><%= link_to 'Edit', edit_nutrition_path(nutrition) %></td>
-        <td><%= link_to 'Destroy', nutrition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      input[class="checkboxinput"] + label {
+        background-color: #ffffff;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        color: #7b7b7b;
+        font-size: 16px;
+        text-align: center;
+        line-height: 52px;
+        border: 2px solid #f5f5f5;
+        border-radius: 2px;
+      }
+      input[class="checkboxinput"]:checked + label {
+        background-color: #c0ff82;
+        color: red;
+        font-weight: bold;
+      }    
+      input[id="makeblood"] {
+        display: none;
+      }      
 
-<br>
+</style>
 
-<%= link_to '영양제 등록하기', new_nutrition_path %>
+<script>
+</script>

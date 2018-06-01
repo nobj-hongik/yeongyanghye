@@ -1,27 +1,29 @@
-<p>
-  <strong>Name:</strong>
-  <%= @nutrition.name %>
-</p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @nutrition.brand %>
-</p>
-
-<p>
-  <strong>Character:</strong>
-  <%= @nutrition.character %>
-</p>
-
-<p>
-  <strong>Function:</strong>
-  <%= @nutrition.function %>
-</p>
-
-<p>
-  <strong>Precaution:</strong>
-  <%= @nutrition.precaution %>
-</p>
-
-<%= link_to 'Edit', edit_nutrition_path(@nutrition) %> |
-<%= link_to 'Back', nutritions_path %>
+<div class="container" style="margin-top:4rem;">
+  <p>
+    <strong>Name:</strong>
+    <%= @nutrition.name %>
+  </p>
+  
+  <p>
+    <strong>Brand:</strong>
+    <%= @nutrition.brand %>
+  </p>
+  
+  <p>
+    <strong>Character:</strong>
+    <%= @nutrition.character %>
+  </p>
+  
+  <p>
+    <strong>Function:</strong>
+    <%= @nutrition.function %>
+  </p>
+  
+  <p>
+    <strong>Precaution:</strong>
+    <%= @nutrition.precaution %>
+  </p>
+  
+  <%= link_to 'Edit', edit_nutrition_path(@nutrition) %> |
+  <%= link_to 'Delete', nutrition_path(@nutrition), method: "delete",:data => {:confirm => '진짜 지울래요?'} %>
+</div>

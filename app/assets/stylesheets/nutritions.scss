@@ -1,3 +1,28 @@
 // Place all the styles related to the Nutritions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.nutritioncontainer{
+    margin-top:3rem;
+}
+.checkfunction{
+    margin-top:5rem;
+}
+
+.checkboxinput{
+    display: none;
+}
+
+div>form>ul>li{
+    display: inline-block;
+    width:6rem;
+}
+.checkboxlabel{
+    display: block;
+    width: 100%;
+    color: #7b7b7b;
+    font-size: 16px;
+    text-align: center;
+    line-height: 52px;
+    border: 2px solid #f5f5f5;
+    border-radius: 2px;
+}
