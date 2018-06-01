@@ -1,0 +1,28 @@
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+  
+  <p>
+    <strong>Title:</strong>
+    <%= @magazine.title %>
+  </p>
+  
+  <p>
+    <strong>Content:</strong>
+    <%= @magazine.content %>
+  </p>
+  
+  <p>
+    <strong>Category:</strong>
+    <%= @magazine.category %>
+  </p>
+  
+  <p>
+    <strong>Image:</strong>
+    <img class='image1' src="<%= @magazine.image %>">
+  </p>
+  
+  <%= link_to 'Edit', edit_magazine_path(@magazine) %> |
+  <%= link_to 'Back', magazines_path %>
+    
+</div>

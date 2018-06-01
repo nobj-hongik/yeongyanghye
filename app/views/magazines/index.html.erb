@@ -1,0 +1,35 @@
+<div class="container"  style="margin-top:3rem;">
+  <div class="ban2 ban" id="ban2">
+  
+    
+    <% if user_signed_in?%>
+      <%= link_to '게시글 작성하기', new_magazine_path, class: "newbtn" %>
+    <% else %>
+      <%= link_to '게시글 작성하기', new_user_session_path, class: "newbtn" %>
+    <% end %>
+  </div>
+  
+  <div class='h-container' style="margin-top:3rem;">
+        <div class="row">
+          <% @magazines.each do |magazine| %>
+            <div class="col-sm-12 col-md-6 col-xl-3">
+              <a href = "/magazines/<%= magazine.id %>">  
+                <div class="card h-card">
+                  <div class="h-img-wrapper">
+                    <% if !magazine.image.blank? %>
+                      <img class="card-img-top h-img" src="<%= magazine.image %>" alt="Card image cap">
+                    <% else %>
+                      <%= image_tag("placeholder_fest.jpeg", class: "card-img-top h-img") %>
+                    <% end %>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="h-card-title" style="color:#09083a;"><%= magazine.title %></h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+        </div>
+  </div>
+</div>
+      
