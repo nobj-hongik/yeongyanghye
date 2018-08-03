@@ -17,7 +17,7 @@
 //   .status_tag { background: #6090DB; }
 // 액티브 어드민 관련 scss임요
 $skinLogo: url("logo.png") no-repeat 0 0;
-$skinActiveColor: #D53A4E;
+$skinActiveColor: #ff8030;
 $skinHeaderBck: #3D4044;
 $panelHeaderBck: #143A52;
 @import "active_skin";
@@ -36,7 +36,7 @@ form fieldset.inputs {
   font-size: 20px;
 }
 
-#site_title_image {width: 140px;}
+#site_title_image {width: 100px;}
 
 .breadcrumb {
   background-color: #44474C;
