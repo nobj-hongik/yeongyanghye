@@ -6,6 +6,8 @@ class CreateNutritions < ActiveRecord::Migration
       t.string :character
       t.text :function
       t.text :precaution
+      t.string :image
+      
       t.belongs_to :user, index: true, foreign_key: true
       t.timestamps null: false
     end

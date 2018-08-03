@@ -69,6 +69,6 @@ class MagazinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def magazine_params
-      params.require(:magazine).permit(:title, :content, :category, :image)
+      params.require(:magazine).permit(:title, :content, :category, :image, :user_id)
     end
 end
