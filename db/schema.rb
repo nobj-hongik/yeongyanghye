@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20180601060323) do
     t.string   "character"
     t.text     "function"
     t.text     "precaution"
+    t.string   "image"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
