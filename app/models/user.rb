@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :nutritions  
   has_many :magazines
+  has_many :magazinelikes
+  has_many :l_magazines, through: :magazinelikes, source: :user
 end

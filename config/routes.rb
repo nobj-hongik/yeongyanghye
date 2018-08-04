@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :magazines
+  
+  resources :magazines do
+    post "/magazinelikes", to: "magazinelikes#like_toggle"
+    # resources :comments, only: [:create, :destroy]
+  end
+  
   devise_for :users
   resources :nutritions
   root 'home#index'
