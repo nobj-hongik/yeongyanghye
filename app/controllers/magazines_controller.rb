@@ -4,7 +4,14 @@ class MagazinesController < ApplicationController
   # GET /magazines
   # GET /magazines.json
   def index
-    @magazines = Magazine.all
+    
+    if params[:category]
+      category = params[:category]
+      @magazines = Magazine.where(:category => category)   
+    else
+      @magazines = Magazine.all
+    end
+    
   end
 
   # GET /magazines/1

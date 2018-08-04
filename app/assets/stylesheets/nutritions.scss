@@ -26,3 +26,26 @@ div>form>ul>li{
     border: 2px solid #f5f5f5;
     border-radius: 2px;
 }
+
+
+input[class="checkboxinput"] + label {
+    background-color: #ffffff;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    color: #7b7b7b;
+    font-size: 16px;
+    text-align: center;
+    line-height: 52px;
+    border: 2px solid #f5f5f5;
+    border-radius: 2px;
+}
+input[class="checkboxinput"]:checked + label {
+    background-color: white;
+    color: orange;
+    border-color: orange;
+    font-weight: bold;
+}    
+input[id="makeblood"] {
+    display: none;
+}      

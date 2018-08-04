@@ -3,10 +3,9 @@
   <%= bootstrap_form_for @magazine do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.text_field :title, label: "제목", :required => true %>
-      <%= f.text_field :category, label: "게시물 종류", placeholder: "ex) 운동정보, 영양정보"%>
-      <%= f.select :category, ["운동정보", "영양정보"], { label: "게시물 종류를 선택해주세요!"}%>
+      <%= f.select :category, ["영양백과", "운동/헬스", "한방", "미용", "제품"], { label: "게시물 종류를 선택해주세요!"}%>
       <%= f.text_area :content, label: "좋은 글을 써주세요!",:required => true%>
-      <%= f.file_field :image, label: "대표사진 선택! (필수)  ", accept: 'image/png,image/gif,image/jpeg' %>
+      <%= f.file_field :image, label: "대표사진 선택!", accept: 'image/png,image/gif,image/jpeg' %>
       <div class="h-container">
         <div style="margin-top:40px;"></div>
         <button type="submit" class="btn btn-secondary" id="marketenroll">등록하기</button>

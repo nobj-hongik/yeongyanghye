@@ -1,3 +1,36 @@
+<div class="container">
+  <form action="/magazines" class="">
+    <ul style="padding-left:25%; margin-bottom:0;">
+      <li>
+        <input type="radio" id="nutritionInfo" value="영양백과" class="checkboxinput" name="category">
+        <label class="checkboxlabel" for="nutritionInfo" >영양백과</label>
+      </li>
+      <li>
+        <input type="radio" id="health" value="운동/헬스" class="checkboxinput" name="category">
+        <label class="checkboxlabel" for="health" >운동/헬스</label>
+      </li>
+      <li>
+        <input type="radio" id="orientalInfo" value="한방" class="checkboxinput" name="category">
+        <label class="checkboxlabel" for="orientalInfo" >한방</label>
+      </li>
+      <li>
+        <input type="radio" id="beauty" value="미용" class="checkboxinput" name="category">
+        <label class="checkboxlabel" for="beauty" >미용</label>
+      </li>
+      <li>
+        <input type="radio" id="product" value="제품" class="checkboxinput" name="category">
+        <label class="checkboxlabel" for="product" >제품</label>
+      </li>
+      <li>
+        <input type="radio" id="all" value="" class="checkboxinput" name="category">
+        <label class="checkboxlabel" for="all" >전체</label>
+      </li>
+    </ul>
+      <button type ="submit" value="submit" class="" style="margin-left:50%">조회하기</button>
+  </form>
+</div>  
+      
+
 <div class="container"  style="margin-top:3rem;">
   <div class="ban2 ban" id="ban2">
   
@@ -32,4 +65,12 @@
         </div>
   </div>
 </div>
-      
+<script>
+$("#login-btn").click(
+  function(){
+      if($("#login-btn").hasClass("enable-login")){
+
+      }
+  }
+)
+</script>      
