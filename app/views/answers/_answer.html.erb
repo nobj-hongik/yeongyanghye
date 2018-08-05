@@ -1,0 +1,37 @@
+<h2 class="title_size slim-font mg-top-med">
+  <span class="bold-font orange">A. </span><%= answer.user.email %>님의 답변
+</h2>
+<p class="semi_slim-font luxury_space info-size">
+  <%= answer.user.email %> | <%= answer.created_at.strftime("%Y-%m-%d at %I:%M%p") %>
+</p>
+<span class="cate_wrap orange_back">채택 안됨</span>
+<br><br>
+<hr>
+<div class="tinymce_wrap">
+  <%= answer.content.html_safe %>
+</div>
+<br>
+<% if current_user.present? && (current_user == @question.user) %>
+  <div class="user_btn">
+    <%= link_to "편집", edit_question_answer_path(@question,answer), class: "btn_micro" %>
+    <%= link_to "삭제", question_answer_path(@question,answer), method: "delete", class: "btn_micro",:data => {:confirm => '진짜 지울까요?'} %>
+  </div>
+<% end %>
+<br>
+<br>
+<% if answer.answer_comments.present? %>
+  <% answer.answer_comments.each do |comment| %>
+    <%= render partial: "shared/forms/answer_comment/item", locals: {question: @question, answer: answer, comment: comment } %>
+  <%end%>
+<% else %>
+<% end %>
+<%= form_tag question_answer_answer_comments_path(@question, answer) do %>
+  <div class="form-group" style="padding-bottom:10px;">
+    <div class="input-field smaller">
+      <%= text_area_tag :content, nil, class: "form-control sm_size", placeholder: "답변에 대한 댓글을 작성해 주세요", required: true %>
+    </div><br>
+    <div class="input-field float-right">
+      <%= button_tag "댓글 쓰기", class: "small_compact_btn hvr-right" %>
+    </div>
+  </div>
+<% end %>

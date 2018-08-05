@@ -13,9 +13,14 @@
  *= require_tree .
  *= require_self
  *= stub active_admin
+ *= stub scaffolds
  */
-@import "bootstrap";
+ @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+ @import "bootstrap";
 
+ html * {
+   font-family: 'Noto Sans KR', sans-serif;
+ }
 
 
 @media (max-width: 768px) {

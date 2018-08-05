@@ -1,0 +1,14 @@
+<h2 class="title_size slim-font mg-top-med">
+  <span class="bold-font orange">Q. </span><%= @question.title %>
+</h2>
+<p class="semi_slim-font luxury_space info-size">
+  <%= @question.user.email %> | <%= @question.created_at.strftime("%Y-%m-%d at %I:%M%p") %>
+</p>
+<span class="cate_wrap"><%= @question.category %></span>
+<span class="cate_wrap orange_back">채택 안함</span>
+<br><br>
+<hr>
+<div class="tinymce_wrap">
+  <%= @question.content.html_safe %>
+</div>
+<br>

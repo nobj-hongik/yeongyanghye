@@ -1,3 +1,121 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title_size{
+  font-size:1.9rem;
+}
+.sub_size{
+  font-size:1.3rem;
+}
+.sm_size{
+  font-size:0.9rem;  
+}
+.semi_slim-font{
+  font-weight: 300;
+}
+.slim-font{
+  font-weight: 200;
+}
+.semi_bold-font{
+  font-weight: 500;
+}
+.bold-font{
+  font-weight: 700;
+}
+.mg-bottom-med{
+  margin-bottom:40px;
+}
+.mg-bottom-sm{
+  margin-bottom:15px;
+}
+.mg-top-sm{
+  margin-top:15px;
+}
+.mg-top-med{
+  margin-top:40px;
+}
+.mr-btn{
+  margin-right:6px;
+}
+.luxury_space{
+  letter-spacing: 0.05em;
+}
+.orange_color{
+  color:#ff7f0f!important;
+}
+.orange_back{
+  background-color:#ff7f0f!important;
+}
+.orange_back:hover{
+  background-color:#ff7f0f!important;
+}
+.btn_micro{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing: 0.08em;
+  color:black;
+  border:0px solid black;
+  padding: 3px 5px 3px 5px;
+}
+.small_compact_btn{
+  background: #ff7f0f;
+  text-decoration: none;
+  color: white;
+  padding:12px 15px;
+  font-size:15px;
+  letter-spacing:0.04em;
+  font-weight:700;
+}
+.small_compact_btn:hover{
+  background: #ff7f0f!important;
+}
+.info-size{
+  font-size:0.8rem;
+}
+.question_div{
+  border-top:1px solid #cccccc;
+  border-bottom:1px solid #cccccc;
+  padding:30px 1rem 30px 1rem;
+  margin-bottom:30px;
+  color:black;
+}
+.question_div:hover{
+  background:#fff7f2;
+}
+.cate_wrap{
+  font-size:12px;
+  border:0px solid black;
+  padding:3px 8px 3px 8px;
+  background-color: black;
+  font-weight:800;
+  color:white;
+}
+.tinymce_wrap > p{
+  margin-bottom:8px;
+  font-size: 15px;
+}
+.qcomment_show{
+  margin-top:30px;
+}
+.user_btn{
+  display:inline-block;
+  float:right;
+  font-size:14px;
+}
+.comment_cool{
+  font-size:0.9rem;
+  padding:20px 15px 20px 15px;
+  background-color: #fff7ef;
+  margin-bottom:20px;
+}
+.thumb_size{
+  width:60px;
+}
+.time_for{
+  font-size:12px;
+  opacity:0.6;
+}
+.com_content{
+  margin-top: 16px;
+}

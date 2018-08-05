@@ -1,20 +1,41 @@
 <div class="container">
-  <%= form_for @question do |f| %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <div class="form-group ">
-      <%= f.label :category, "카테고리"  %><br />
-      <%= f.text_area :category, class: "form-control" ,rows: "5" %>
+  <div class="row">
+    <div class="col-xs-0 col-md-1 col-lg-2"></div>
+    <div class="col-xs-12 col-md-10 col-lg-8">
+      <h2 class="title_size slim-font mg-top-med">
+        <a href="/questions" class="btn_micro hvr-right float-right">목록으로</a>
+        <span class="bold-font orange">영양in</span> 질문하기
+      </h2>
+      <p class="semi_slim-font mg-bottom-med luxury_space info-size">
+        세상의 모든 영양 지식, 영양해에게 물어봐!
+      </p>
+      <%= form_for @question do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <div class="form-group">
+          <%= f.label :category, "카테고리" ,class: "bold-font control-label luxury_space mg-bottom-sm"%><br />
+          <%= f.select(:category, Question::CATEGORY.keys, class: "form-control") %>
+        </div>
+        <br>
+        <div class="form-group ">
+          <%= f.label :title, "질문 제목" ,class: "bold-font control-label luxury_space mg-bottom-sm"%><br />
+          <%= f.text_field :title, class: "form-control" ,rows: "5" %>
+        </div>
+        <br>
+        <div class="form-group ">
+          <%= f.label :content, "질문 내용" ,class: "bold-font control-label luxury_space"%>
+          <p class="semi_slim-font mg-bottom-med luxury_space info-size">
+            질문을 자세히 적어주시면, 더욱 상세한 답변을 얻을 수 있습니다.
+          </p>
+          <%= tinymce :language => "ko" %>
+          <%= f.text_area :content, class: "form-control tinymce" ,rows: "18" %>
+        </div>
+        <br>
+        <div class="form-group" style="text-align:center;">
+          <%= f.button "질문하기", class: "small_compact_btn hvr-right" %>
+        </div>
+        <br><br>
+      <% end %>
     </div>
-    <div class="form-group ">
-      <%= f.label :title, "질문 제목" %><br />
-      <%= f.text_area :title, class: "form-control" ,rows: "5" %>
-    </div>
-    <div class="form-group ">
-      <%= f.label :content, "질문 내용" %><br />
-      <%= f.text_area :content, class: "form-control" ,rows: "5" %>
-    </div>
-    <div class="form-group formbtn" style="text-align:center;">
-      <%= f.submit "질문하기", class: "btn btn-md btn-default btn-lg btlogin" %>
-    </div>
-  <% end %>
+    <div class="col-xs-0 col-md-1 col-lg-2"></div>
+  </div>
 </div>
