@@ -34,18 +34,18 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">자유게시판</a>
-          <a class="dropdown-item" href="#">질문게시판</a>
+          <a class="dropdown-item" href="/questions">영양 in</a>
         </div>
       </li>
 
       <% if user_signed_in? %>
         <li class="nav-item">
           <a class="nav-link disabled" href="#">개인정보</a>
-        </li>      
+        </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="/users/sign_out" data-method="delete">로그아웃</a>
         </li>
-      <% else %>  
+      <% else %>
         <li class="nav-item">
           <a class="nav-link disabled" href="/users/sign_in">로그인</a>
         </li>

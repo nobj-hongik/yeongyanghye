@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180804143140) do
+ActiveRecord::Schema.define(version: 20180805033034) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20180804143140) do
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
-
+  
   create_table "magazinelikes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "magazine_id"
@@ -50,6 +50,37 @@ ActiveRecord::Schema.define(version: 20180804143140) do
     t.datetime "updated_at",  null: false
     t.index ["magazine_id"], name: "index_magazinelikes_on_magazine_id"
     t.index ["user_id"], name: "index_magazinelikes_on_user_id"
+
+  create_table "answer_comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "answer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_answer_comments_on_answer_id"
+    t.index ["user_id"], name: "index_answer_comments_on_user_id"
+  end
+
+  create_table "answer_likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "answer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_answer_likes_on_answer_id"
+    t.index ["user_id"], name: "index_answer_likes_on_user_id"
+  end
+
+  create_table "answers", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "image"
+    t.integer  "answer_likes_count"
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "magazines", force: :cascade do |t|
@@ -74,6 +105,37 @@ ActiveRecord::Schema.define(version: 20180804143140) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_nutritions_on_user_id"
+  end
+
+  create_table "question_comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["question_id"], name: "index_question_comments_on_question_id"
+    t.index ["user_id"], name: "index_question_comments_on_user_id"
+  end
+
+  create_table "question_likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["question_id"], name: "index_question_likes_on_question_id"
+    t.index ["user_id"], name: "index_question_likes_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer  "category"
+    t.string   "title"
+    t.text     "content"
+    t.string   "image"
+    t.integer  "question_likes_count"
+    t.integer  "user_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

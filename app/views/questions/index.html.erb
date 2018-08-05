@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-0 col-md-1 col-lg-2 col-xl-3"></div>
+    <div class="col-xs-12 col-md-10 col-lg-8 col-xl-6">
+      <h2 class="title_size slim-font mg-top-med">영양해
+        <span class="bold-font orange">영양in</span>
+        <a href="/questions/new" class="small_compact_btn hvr-right float-right">질문하기</a>
+      </h2>
+      <p class="semi_slim-font mg-bottom-med luxury_space info-size">
+        세상의 모든 영양 지식, 영양해에게 물어봐!
+      </p>
+      <% @questions.each do |question| %>
+        <a href="/questions/<%=question.id%>">
+          <div class="question_div">
+          <span class="cate_wrap"><%= question.category %></span>
+          <span class="cate_wrap orange_back">채택 안됨</span>
+          <p class="luxury_space mg-top-sm semi_bold-font sub_size"><%= question.title %></p>
+          <p class="slim-font info-size"><%= question.user.email %>님 외 2명이 기다리고 있어요</p>
+          </div>
+        </a>
+      <% end %>
+    </div>
+    <div class="col-xs-0 col-md-1 col-lg-2 col-xl-3"></div>
+  </div>
+</div>

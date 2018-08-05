@@ -12,13 +12,18 @@
  *
  *= require_tree .
  *= require_self
- *= stub admin
+ *= stub active_admin
+ *= stub scaffolds
  */
-@import "bootstrap";
+ @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+ @import "bootstrap";
+
+ html * {
+   font-family: 'Noto Sans KR', sans-serif;
+ }
 
 
-
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     .mainsection{
         height:30vh;
         width:100%;
@@ -32,7 +37,7 @@
         padding-top:5rem;
     }
 }
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .mainsection{
         height:25rem;
         width:100%;

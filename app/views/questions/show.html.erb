@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-0 col-md-1"></div>
+    <div class="col-xs-12 col-md-10 mg-bottom-med">
+      <br>
+      <a href="/questions" class="btn_micro hvr-right float-right">목록으로</a>
+      <%= render partial: "questions/question" %>
+      <% if current_user.present? && (current_user == @question.user) %>
+        <div class="user_btn">
+          <%= link_to "편집", edit_question_path(@question), class: "btn_micro" %>
+          <%= link_to "삭제", question_path(@question), method: "delete", class: "btn_micro",:data => {:confirm => '진짜 지울까요?'} %>
+        </div>
+      <% end %>
+      <br><hr>
+      <%= link_to "답변하기", new_question_answer_path(params[:id]), class: "small_compact_btn hvr-right float-right"%>
+      <br><br><br>
+      <div class="qcomment_show">
+        <% if @question.question_comments.present? %>
+          <% @question.question_comments.each do |comment| %>
+            <%= render partial: "shared/forms/question_comment/item", locals: {question: @question, comment: comment } %>
+          <%end%>
+        <% else %>
+        <% end %>
+      </div>
+      <% if user_signed_in? %>
+        <%= form_tag question_question_comments_path(@question) do %>
+          <div class="form-group" style="padding-bottom:10px;">
+            <div class="input-field smaller">
+              <%= text_area_tag :content, nil, class: "form-control sm_size", placeholder: "질문에 대한 댓글을 작성해 주세요", required: true %>
+            </div><br>
+            <div class="input-field float-right">
+              <%= button_tag "댓글 쓰기", class: "small_compact_btn hvr-right" %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <br><br>
+      <hr>
+      <% @answers.each do |answer| %>
+        <%= render partial: "answers/answer", locals: { answer: answer } %>
+      <% end %>
+    </div>
+    <div class="col-xs-0 col-md-1"></div>
+  </div>
+</div>
