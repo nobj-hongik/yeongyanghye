@@ -25,13 +25,15 @@
   <%end%>
 <% else %>
 <% end %>
-<%= form_tag question_answer_answer_comments_path(@question, answer) do %>
-  <div class="form-group" style="padding-bottom:10px;">
-    <div class="input-field smaller">
-      <%= text_area_tag :content, nil, class: "form-control sm_size", placeholder: "답변에 대한 댓글을 작성해 주세요", required: true %>
-    </div><br>
-    <div class="input-field float-right">
-      <%= button_tag "댓글 쓰기", class: "small_compact_btn hvr-right" %>
+<% if user_signed_in? %>
+  <%= form_tag question_answer_answer_comments_path(@question, answer) do %>
+    <div class="form-group" style="padding-bottom:10px;">
+      <div class="input-field smaller">
+        <%= text_area_tag :content, nil, class: "form-control sm_size", placeholder: "답변에 대한 댓글을 작성해 주세요", required: true %>
+      </div><br>
+      <div class="input-field float-right">
+        <%= button_tag "댓글 쓰기", class: "small_compact_btn hvr-right" %>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
