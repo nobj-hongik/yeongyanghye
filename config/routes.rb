@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
+  root 'home#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :magazines
   devise_for :users
+  resources :magazines
   resources :nutritions
-  root 'home#index'
+  resources :questions do
+    resources :question_comments, only: [:create, :destroy]
+    post "/question_like", to: "question_likes#like_toggle"
+    resources :answers, except: [:index, :show] do
+      resources :answer_comments, only: [:create, :destroy]
+      post "/answer_like", to: "answer_likes#like_toggle"
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

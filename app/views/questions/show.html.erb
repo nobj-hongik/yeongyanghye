@@ -1,0 +1,76 @@
+<div class="container">
+  <hr>
+  <%= @question.category %>
+  <br>
+  <%= @question.title %>
+  <br>
+  <%= @question.content %>
+  <br>
+  <%= link_to "새 답변 쓰기", new_question_answer_path(params[:id])%>
+  <hr><br>
+  <% if @question.question_comments.present? %>
+    <% @question.question_comments.each do |comment| %>
+      <%= render partial: "shared/forms/question_comment/item", locals: {question: @question, comment: comment } %>
+    <%end%>
+  <% else %>
+    <div class="no_comment" id="alert_mes">
+      <p>아직 <strong>댓글</strong>이 없습니다 : )</p>
+    </div>
+  <% end %>
+  <hr>
+  <%= form_tag question_question_comments_path(@question) do %>
+    <div class="form-group" style="padding-bottom:10px;">
+      <div class="row">
+        <div class="col-10" style="padding-right:0px;">
+          <div class="input-field smaller">
+            <%= text_area_tag :content, nil, class: "form-control tarea_upost", placeholder: "댓글을 작성해 주세요", required: true %>
+          </div>
+        </div>
+        <div class="col-2" style="padding-left:0px;">
+          <div class="input-field center-btn">
+            <%= button_tag ">>", class: "small_compact_btn hvr-right_sky" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <hr>
+  <% @answers.each do |answer| %>
+    <hr>
+    [답변]
+    <br>
+    <%= answer.title %>
+    <br>
+    <%= answer.content %>
+    <hr>
+    <hr><br>
+    <% if answer.answer_comments.present? %>
+      <% answer.answer_comments.each do |comment| %>
+        <%= render partial: "shared/forms/answer_comment/item", locals: {question: @question, answer: answer, comment: comment } %>
+      <%end%>
+    <% else %>
+      <div class="no_comment" id="alert_mes">
+        <p>아직 <strong>댓글</strong>이 없습니다 : )</p>
+      </div>
+    <% end %>
+    <hr>
+    <hr>
+    <%= form_tag question_answer_answer_comments_path(@question, answer) do %>
+      <div class="form-group" style="padding-bottom:10px;">
+        <div class="row">
+          <div class="col-10" style="padding-right:0px;">
+            <div class="input-field smaller">
+              <%= text_area_tag :content, nil, class: "form-control tarea_upost", placeholder: "댓글을 작성해 주세요", required: true %>
+            </div>
+          </div>
+          <div class="col-2" style="padding-left:0px;">
+            <div class="input-field center-btn">
+              <%= button_tag ">>", class: "small_compact_btn hvr-right_sky" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <hr>
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <% @questions.each do |question| %>
+    <hr>
+    <a href="/questions/<%=question.id%>">질문 보러가기</a>
+    <br>
+    <%= question.category %>
+    <br>
+    <%= question.title %>
+    <br>
+    <%= question.content %>
+    <hr><br>
+  <% end %>
+</div>

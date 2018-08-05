@@ -1,0 +1,20 @@
+<div class="container">
+  <%= form_for @question do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <div class="form-group ">
+      <%= f.label :category, "카테고리"  %><br />
+      <%= f.text_area :category, class: "form-control" ,rows: "5" %>
+    </div>
+    <div class="form-group ">
+      <%= f.label :title, "질문 제목" %><br />
+      <%= f.text_area :title, class: "form-control" ,rows: "5" %>
+    </div>
+    <div class="form-group ">
+      <%= f.label :content, "질문 내용" %><br />
+      <%= f.text_area :content, class: "form-control" ,rows: "5" %>
+    </div>
+    <div class="form-group formbtn" style="text-align:center;">
+      <%= f.submit "수정하기", class: "btn btn-md btn-default btn-lg btlogin" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-2 col-md-1" style="padding-right:0px">
+  </div>
+  <div class="col-10 col-md-11" style="padding-left:0px">
+    <span class="title3"><%= comment.user.email %></span>
+    <span class="float-right timeforman2"><%= comment.created_at %></span>
+    <p class="comcont"><%= comment.content %></p>
+    <% if !user_signed_in? %>
+    <%else%>
+      <% if comment.user.id == current_user.id %>
+        <%= link_to "삭제하기", question_answer_answer_comment_path(question,answer,comment), method: "delete", class: "float-right info-size-sm luxury_space btn_micro hvr-right_red",:data => {:confirm => '진짜 지워요?'} %>
+      <% end %>
+     <%end%>
+     <br>
+  </div>
+</div>
