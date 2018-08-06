@@ -42,14 +42,6 @@ ActiveRecord::Schema.define(version: 20180805033034) do
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
-  
-  create_table "magazinelikes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "magazine_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["magazine_id"], name: "index_magazinelikes_on_magazine_id"
-    t.index ["user_id"], name: "index_magazinelikes_on_user_id"
 
   create_table "answer_comments", force: :cascade do |t|
     t.text     "content"
@@ -81,6 +73,15 @@ ActiveRecord::Schema.define(version: 20180805033034) do
     t.datetime "updated_at",         null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "magazinelikes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "magazine_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["magazine_id"], name: "index_magazinelikes_on_magazine_id"
+    t.index ["user_id"], name: "index_magazinelikes_on_user_id"
   end
 
   create_table "magazines", force: :cascade do |t|
