@@ -1,3 +1,36 @@
 // Place all the styles related to the Magazines controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@media (max-width: 768px) {
+    .magazine_mainsection{
+        height:30vh;
+        width:100%;
+        background-position: center;
+        background-size: cover;
+    }
+    .magazine_sectionword{
+        color:white;
+        font-size:1.3rem;
+        padding-top:5rem;
+        padding-left:1rem;
+    }
+}
+@media (min-width: 768px) {
+    .magazine_mainsection{
+        height:25rem;
+        width:100%;
+        background-position: center;
+        background-size: cover;
+    }
+    .magazine_sectionword{
+        color:white;
+        font-size:2rem;
+        padding-top:10rem;
+        padding-left:3rem;
+    }
+    .magazine_categorysection{
+        margin-top: 3rem;
+    }
+}

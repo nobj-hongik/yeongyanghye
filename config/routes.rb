@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
-  resources :magazines
   resources :nutritions
   resources :questions do
     resources :question_comments, only: [:create, :destroy]
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
   end
   resources :magazines do
     post "/magazinelikes", to: "magazinelikes#like_toggle"
-    # resources :comments, only: [:create, :destroy]
+    resources :magazine_comments, only: [:create, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

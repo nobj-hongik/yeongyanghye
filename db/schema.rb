@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180805033034) do
+ActiveRecord::Schema.define(version: 20180806105925) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -73,6 +73,16 @@ ActiveRecord::Schema.define(version: 20180805033034) do
     t.datetime "updated_at",         null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "magazine_comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "magazine_id"
+    t.text     "content"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["magazine_id"], name: "index_magazine_comments_on_magazine_id"
+    t.index ["user_id"], name: "index_magazine_comments_on_user_id"
   end
 
   create_table "magazinelikes", force: :cascade do |t|

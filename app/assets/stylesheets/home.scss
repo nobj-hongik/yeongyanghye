@@ -1,3 +1,32 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media (max-width: 768px) {
+    .mainsection{
+        height:30vh;
+        width:100%;
+        text-align: center;
+        background-position: center;
+        background-size: cover;
+    }
+    .sectionword{
+        color:white;
+        font-size:1.3rem;
+        padding-top:5rem;
+    }
+}
+@media (min-width: 768px) {
+    .mainsection{
+        height:25rem;
+        width:100%;
+        text-align: center;
+        background-position: center;
+        background-size: cover;
+    }
+    .sectionword{
+        color:white;
+        font-size:2rem;
+        padding-top:10rem;
+    }
+}
