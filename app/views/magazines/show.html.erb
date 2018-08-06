@@ -36,3 +36,33 @@
   <%= link_to 'Back', magazines_path %>
     
 </div>
+
+</hr>
+<% if user_signed_in? %>
+  <%= form_tag magazine_magazine_comments_path(@magazine) do %>
+    <div class="form-group" style="padding-bottom:10px;">
+      <div class="input-field smaller">
+        <%= text_area_tag :content, nil, class: "form-control sm_size", placeholder: "질문에 대한 댓글을 작성해 주세요", required: true %>
+      </div><br>
+      <div class="input-field float-right">
+        <%= button_tag "댓글 쓰기", class: "small_compact_btn hvr-right" %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</hr>
+<% if @magazine.magazine_comments.present? %>
+      <ul class="collection">
+      <% @magazine.magazine_comments.each do |comment| %>
+        <li class="collection-item">
+          <span class="title"><%= comment.user.id %></span>
+          <span class="right"><%= local_time(comment.created_at) %></span>
+          <p class="pre-line"><%= comment.content %></p>
+          <% if comment.user.id == current_user.id %>
+            <div><%= link_to "삭제", magazine_magazine_comments_path(@magazine, comment), method: "delete" %></div>
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
+<% end %>
+
