@@ -17,4 +17,8 @@ class Question < ApplicationRecord
 
   CATEGORY = { '건강관리': 0, '미용': 1, '다이어트': 2, '한방관리': 3, '제철관리': 4, '영양기타': 5, '운동': 6 }.freeze
 
+  def owner_selected?
+    return true if self.owner_selected == true
+  end
+
 end

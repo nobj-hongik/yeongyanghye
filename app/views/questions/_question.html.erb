@@ -5,7 +5,11 @@
   <%= @question.user.email %> | <%= @question.created_at.strftime("%Y-%m-%d at %I:%M%p") %>
 </p>
 <span class="cate_wrap"><%= @question.category %></span>
-<span class="cate_wrap orange_back">채택 안함</span>
+<% if @question.owner_selected? %>
+  <span class="cate_wrap green_back">채택 완료</span>
+<% else %>
+  <span class="cate_wrap orange_back">채택 대기중</span>
+<% end %>
 <br><br>
 <hr>
 <div class="tinymce_wrap">

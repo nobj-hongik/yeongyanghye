@@ -28,6 +28,12 @@ class AnswersController < ApplicationController
     redirect_to question_path(@question.id)
   end
 
+  def select_answer
+    @target = Answer.find(params[:answer_id])
+    @target.toggle_answer
+    redirect_to question_path(@target.question)
+  end
+
   private
 
   def load_object

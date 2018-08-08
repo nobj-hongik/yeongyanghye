@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :answers, except: [:index, :show] do
       resources :answer_comments, only: [:create, :destroy]
       post "/answer_like", to: "answer_likes#like_toggle"
+      post "/select_answer", to: "answers#select_answer"
     end
   end
   resources :magazines do
