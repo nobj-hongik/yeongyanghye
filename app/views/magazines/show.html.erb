@@ -56,7 +56,6 @@
       <% @magazine.magazine_comments.each do |comment| %>
         <li class="collection-item">
           <span class="title"><%= comment.user.id %></span>
-          <span class="right"><%= local_time(comment.created_at) %></span>
           <p class="pre-line"><%= comment.content %></p>
           <% if comment.user.id == current_user.id %>
             <div><%= link_to "삭제", magazine_magazine_comments_path(@magazine, comment), method: "delete" %></div>
@@ -65,4 +64,5 @@
       <% end %>
       </ul>
 <% end %>
+
 
