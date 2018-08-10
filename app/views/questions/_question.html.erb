@@ -1,7 +1,7 @@
 <h2 class="title_size slim-font mg-top-med">
   <span class="bold-font orange">Q. </span><%= @question.title %>
 </h2>
-<p class="semi_slim-font luxury_space info-size">
+<p class="semi_slim-font luxury_space info-size mg-desc">
   <%= @question.user.email %> | <%= @question.created_at.strftime("%Y-%m-%d at %I:%M%p") %>
 </p>
 <span class="cate_wrap"><%= @question.category %></span>
@@ -10,6 +10,7 @@
 <% else %>
   <span class="cate_wrap orange_back">채택 대기중</span>
 <% end %>
+<p class="semi_slim-font luxury_space info-size">도현님 외 <span class="bold-font">10명</span>이 궁금해 하네욤</p>
 <br><br>
 <hr>
 <div class="tinymce_wrap">

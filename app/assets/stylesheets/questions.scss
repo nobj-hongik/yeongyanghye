@@ -58,6 +58,18 @@
   border:0px solid black;
   padding: 3px 5px 3px 5px;
 }
+.small_compact_btn_3{
+  background-color: #00CC00;
+  text-decoration: none;
+  color: white;
+  padding:12px 15px;
+  font-size:15px;
+  letter-spacing:0.04em;
+  font-weight:700;
+}
+.small_compact_btn_3:hover{
+  background: #00CC00!important;
+}
 .small_compact_btn{
   background: #ff7f0f;
   text-decoration: none;
@@ -139,4 +151,7 @@
   text-decoration: none;
   opacity: 0.8;
   color:white;
+}
+.mg-desc{
+  margin-bottom:8px!important;
 }

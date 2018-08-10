@@ -12,7 +12,7 @@ class QuestionLikesController < ApplicationController
       like.destroy
     end
 
-    redirect_to :back
+    redirect_to question_path(params[:question_id])
   end
-  
+
 end

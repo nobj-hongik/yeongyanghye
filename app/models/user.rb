@@ -17,10 +17,10 @@ class User < ActiveRecord::Base
 
   # 좋아하는지 아닌지 판별하는 인스턴스 매소드 (현성형 매거진 좋아요도 추가가능)
   def is_like?(object)
-    if object.to_s = "Question"
-      QuestionLike.find_by(user_id: self.id, question_id: question.id).present?
-    elsif object.to_s = "Answer"
-      AnswerLike.find_by(user_id: self.id, answer_id: answer.id).present?
+    if object.class.name == "Question"
+      return QuestionLike.find_by(user_id: self.id, question_id: object.id).present? ? true : false
+    elsif object.class.name == "Answer"
+      return AnswerLike.find_by(user_id: self.id, answer_id: object.id).present? ? true : false
     else
       return false
     end
