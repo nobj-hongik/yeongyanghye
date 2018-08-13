@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180808135402) do
+ActiveRecord::Schema.define(version: 20180813020701) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -76,6 +76,15 @@ ActiveRecord::Schema.define(version: 20180808135402) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
+  create_table "idetities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_idetities_on_user_id"
+  end
+
   create_table "magazine_comments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "magazine_id"
@@ -104,6 +113,14 @@ ActiveRecord::Schema.define(version: 20180808135402) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_magazines_on_user_id"
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.datetime "start_time"
+    t.integer  "userid"
   end
 
   create_table "nutritions", force: :cascade do |t|
@@ -147,7 +164,6 @@ ActiveRecord::Schema.define(version: 20180808135402) do
     t.integer  "user_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.boolean  "owner_selected"
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
@@ -164,6 +180,14 @@ ActiveRecord::Schema.define(version: 20180808135402) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.integer  "failed_attempts",        default: 0,  null: false
+    t.string   "unlock_token"
+    t.datetime "locked_at"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
