@@ -21,4 +21,7 @@ class Question < ApplicationRecord
     return true if self.owner_selected == true
   end
 
+  def answer_already_selected
+    return true if self.answers.pluck(:is_selected).include?(true)
+  end
 end

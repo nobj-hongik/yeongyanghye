@@ -6,6 +6,7 @@
 </p>
 <% if @question.user == current_user %>
   <% if answer.is_selected? && @question.owner_selected? %>
+    <span class="cate_wrap green_back">채택된 답변입니다</span>
     <%= link_to "채택 취소하기", question_answer_select_answer_path(@question,answer), class: "cate_wrap ahvr", method: :post %>
   <% elsif !answer.is_selected? && @question.owner_selected? %>
   <% elsif !answer.is_selected? && !@question.owner_selected? %>
@@ -13,7 +14,7 @@
   <% end %>
 <% else %>
   <% if answer.is_selected? %>
-    <span class="cate_wrap green_back">채택된 질문입니다</span>
+    <span class="cate_wrap green_back">채택된 답변입니다</span>
   <% else %>
     <span class="cate_wrap">채택 대기 중</span>
   <% end %>
