@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @free.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @free.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @free.user %>
+</p>
+
+<p>
+  <strong>Like:</strong>
+  <%= @free.freelikes.size %> 명이 좋아합니다. 
+</p>
+ 
+<p>
+  <% if @free.freeliked_users.include?(current_user) %>
+      <%= link_to "좋아요 취소", free_freelikes_path(@free), method: "post" %>
+  <% else %>
+      <%= link_to "좋아요", free_freelikes_path(@free), method: "post" %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_free_path(@free) %> |
+<%= link_to 'Back', frees_path %>
