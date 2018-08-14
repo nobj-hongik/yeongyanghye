@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @free.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @free.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @free.user %>
+</p>
+
+<%= link_to 'Edit', edit_free_path(@free) %> |
+<%= link_to 'Back', frees_path %>

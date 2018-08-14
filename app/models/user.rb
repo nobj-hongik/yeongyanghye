@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :answer_comments
   has_many :question_liked_questions, through: :question_likes, source: :question
   has_many :answer_liked_answers, through: :answer_likes, source: :answer
+  has_many :frees
 
   # 좋아하는지 아닌지 판별하는 인스턴스 매소드 (현성형 매거진 좋아요도 추가가능)
   def is_like?(object)
