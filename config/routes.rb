@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   
   resources :frees do
     post '/freelikes' => 'freelikes#like_toggle'
+    resources :free_comments, only: [:create, :destroy]
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

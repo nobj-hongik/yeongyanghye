@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180814072531) do
+ActiveRecord::Schema.define(version: 20180814094247) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -74,6 +74,25 @@ ActiveRecord::Schema.define(version: 20180814072531) do
     t.boolean  "is_selected"
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "free_comments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_free_comments_on_post_id"
+    t.index ["user_id"], name: "index_free_comments_on_user_id"
+  end
+
+  create_table "freelikes", force: :cascade do |t|
+    t.integer  "free_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["free_id"], name: "index_freelikes_on_free_id"
+    t.index ["user_id"], name: "index_freelikes_on_user_id"
   end
 
   create_table "frees", force: :cascade do |t|

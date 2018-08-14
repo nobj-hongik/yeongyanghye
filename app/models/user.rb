@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   has_many :answer_liked_answers, through: :answer_likes, source: :answer
   has_many :frees
   has_many :freelikes
+  has_many :freecomments
   has_many :liked_frees, through: :freelikes, source: :free
 
   # 좋아하는지 아닌지 판별하는 인스턴스 매소드 (현성형 매거진 좋아요도 추가가능)
