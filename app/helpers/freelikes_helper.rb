@@ -1,0 +1,2 @@
+module FreelikesHelper
+end

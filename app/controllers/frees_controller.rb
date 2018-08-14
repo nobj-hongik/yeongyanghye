@@ -1,5 +1,8 @@
 class FreesController < InheritedResources::Base
 
+  before_action :authenticate_user!, only: [:new, :edit]
+  
+  
   private
 
     def free_params
