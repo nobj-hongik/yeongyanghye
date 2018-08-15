@@ -85,17 +85,17 @@ ko:
         user:
           attributes:
             name:
-              blank: '이름이 비어있습니다'
+              blank: '이 비어있습니다'
             email:
               taken: '이미 등록된 이메일입니다'
             password:
-              blank: '비밀번호가 비어있습니다'
+              blank: '가 비어있습니다'
             phone:
-              blank: '전화번호가 비어있습니다'
+              blank: '가 비어있습니다'
             promotion:
               blank: '프로모션명이 비어있습니다'
             email:
-              blank: "이메일이 비어있습니다"
+              blank: "이 비어있습니다"
         nutrition:
           attributes:
             name:

@@ -25,6 +25,7 @@ ko:
         unconfirmed_email: "확인되지 않은 이메일 주소"
         unlock_token: "잠금해제 토큰"
         updated_at: "업데이트된 시간"
+        
     models:
       user: "사용자"
       page: "페이지"
@@ -40,6 +41,8 @@ ko:
       send_instructions: "이메일로 이메일 주소 인증 안내가 발송되었습니다."
       send_paranoid_instructions: "이메일 주소가 존재한다면 메일로 인증 안내 메일을 받을 수 있습니다."
     failure:
+      password.too_short: "비밀번호가 짧습니다 6자리 이상으로 해주세요"
+
       already_authenticated: "이미 로그인되어 있습니다."
       inactive: "계정이 아직 활성화되지 않았습니다."
       invalid: "아이디 또는 비밀번호를 잘못 입력하셨습니다."
@@ -89,6 +92,9 @@ ko:
       send_paranoid_instructions: "회원정보에 등록된 이메일 주소와 동일하면, 몇 분 안에 비밀번호 재설정 주소를 이메일로 받으실 수 있습니다."
       updated: "성공적으로 비밀번호를 변경했습니다. 로그인 되었습니다."
       updated_not_active: "비밀번호가 성공적으로 변경되었습니다."
+      password.too_short: "비밀번호가 짧습니다 6자리 이상으로 해주세요"
+
+
     registrations:
       destroyed: "회원님의 계정이 성공적으로 탈퇴처리 되었습니다. 다시 볼 수 있기를 바랍니다."
       edit:
@@ -137,3 +143,8 @@ ko:
       not_found: "찾을 수 없습니다."
       not_locked: "은(는) 잠기지 않았습니다."
       not_saved: "%{count}개의 오류로 인해 %{resource}이(가) 저장되지 못했습니다."
+      password.too_short: "비밀번호가 짧습니다 6자리 이상으로 해주세요"
+    models:
+      user:
+        attributes:
+          password.too_short: "비밀번호가 짧습니다 6자리 이상으로 해주세요"
