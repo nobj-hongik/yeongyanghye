@@ -30,17 +30,33 @@
 
 <hr>
 
-<p><strong>댓글작성</strong></p>
-  <div class="well">
-  <form action="/posts/<%=@post.id%>" method="post">
-   <div class="form-group">
-    <input type="hidden" value="<%=current_user.id%>" name="user_id"></input>
-    <input type="hidden" value="<%=@post.id%>" name="post_id"></input>
-    <textarea class="form-control" rows="5" name="comment"></textarea>
-   </div>
-   <button type="submit" class="btn btn-default">댓글작성!</button>
-  </form>
- </div>
+<% if user_signed_in? %>
+  <%= form_tag free_free_comments_path(@free) do %>
+    <div class="form-group" style="padding-bottom:10px;">
+      <div class="input-field smaller">
+        <%= text_area_tag :comment, nil, class: "form-control sm_size", placeholder: "댓글을 작성해 주세요", required: true %>
+      </div><br>
+      <div class="input-field float-right">
+        <%= button_tag "댓글 쓰기", class: "small_compact_btn hvr-right" %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+ 
+<hr>
+ 
+<% if @free.free_comments.present? %>
+      <ul class="collection">
+      <% @free.free_comments.each do |comment| %>
+        <li class="collection-item">
+          <span class="title"><%= comment.user.id %></span>
+          <p class="pre-line"><%= comment.comment %></p>
+        </li>
+      <% end %>
+      </ul>
+<% end %>
+
+
 
 <%= link_to 'Edit', edit_free_path(@free) %> |
 <%= link_to 'Back', frees_path %>

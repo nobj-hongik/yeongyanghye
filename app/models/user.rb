@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :omniauthable,
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :nutritions
   has_many :magazines
   has_many :magazine_comments
@@ -16,8 +16,9 @@ class User < ActiveRecord::Base
   has_many :answer_liked_answers, through: :answer_likes, source: :answer
   has_many :frees
   has_many :freelikes
-  has_many :freecomments
+  has_many :free_comments
   has_many :liked_frees, through: :freelikes, source: :free
+  has_many :events
 
   # 좋아하는지 아닌지 판별하는 인스턴스 매소드 (현성형 매거진 좋아요도 추가가능)
   def is_like?(object)

@@ -3,9 +3,9 @@
 one:
   comment: MyText
   user: one
-  post: one
+  free: one
 
 two:
   comment: MyText
   user: two
-  post: two
+  free: two

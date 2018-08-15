@@ -1,5 +1,20 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+# # devise : 이메일 인증 설정
+#   config.action_mailer.delivery_method = :smtp
+#   config.action_mailer.perform_deliveries = true
+#   config.action_mailer.default_url_options = { host: '(자신의 사이트 주소)' }
+#   ActionMailer::Base.smtp_settings = {
+#     :address              => 'smtp.gmail.com',
+#     :domain               => 'mail.google.com',
+#     :port                 => 25,
+#     :user_name            => "(구글 ID)",
+#     :password             => "(구글 암호)",
+#     :authentication       => 'login',
+#     :enable_starttls_auto => true
+#   } 나중에 퍼블리싱할때
+
+
 
   # Code is not reloaded between requests.
   config.cache_classes = true

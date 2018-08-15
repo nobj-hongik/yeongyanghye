@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180814094247) do
+ActiveRecord::Schema.define(version: 20180815031727) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -76,13 +76,20 @@ ActiveRecord::Schema.define(version: 20180814094247) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.date     "eventime"
+  end
+
   create_table "free_comments", force: :cascade do |t|
     t.text     "comment"
     t.integer  "user_id"
-    t.integer  "post_id"
+    t.integer  "free_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_free_comments_on_post_id"
+    t.index ["free_id"], name: "index_free_comments_on_free_id"
     t.index ["user_id"], name: "index_free_comments_on_user_id"
   end
 
@@ -203,8 +210,10 @@ ActiveRecord::Schema.define(version: 20180814094247) do
     t.datetime "locked_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
 end

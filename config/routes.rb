@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  
+  resource :calendar, only: [:show], controller: :calendar
+  get 'calendar/show'
+
   root 'home#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
+  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   resources :nutritions
   resources :questions do
     resources :question_comments, only: [:create, :destroy]
@@ -20,10 +23,17 @@ Rails.application.routes.draw do
   end
   
   resources :frees do
-    post '/freelikes' => 'freelikes#like_toggle'
-    resources :free_comments, only: [:create, :destroy]
+    post "/freelikes", to: "freelikes#like_toggle"
+    resources :free_comments, only: [:create]
   end
-  
+
+  # CalendarExample::Application.routes.draw do
+  get 'calendar/show'
+
+  #   resource :calendar, only: [:show], controller: :calendar
+  #   root to: "calendar#show"
+  # end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
