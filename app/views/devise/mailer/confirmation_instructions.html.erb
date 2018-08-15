@@ -1,5 +1,5 @@
 <p>Welcome <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>반갑습니다. 영양해 뿅 하고싶으면 밑에 누르세요!:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to '회원가입하기!', confirmation_url(@resource, confirmation_token: @token) %></p>
