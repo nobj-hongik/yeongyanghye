@@ -1,17 +1,17 @@
 class MagazinesController < ApplicationController
   before_action :set_magazine, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :edit]
   # GET /magazines
   # GET /magazines.json
   def index
-    
+
     if params[:category]
       category = params[:category]
-      @magazines = Magazine.where(:category => category)   
+      @magazines = Magazine.where(:category => category)
     else
       @magazines = Magazine.all
     end
-    
+
   end
 
   # GET /magazines/1
