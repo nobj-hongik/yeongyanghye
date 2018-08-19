@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180819092846) do
-=======
-ActiveRecord::Schema.define(version: 20180818022728) do
->>>>>>> 7b6bbb6cebe173eb1de4227d862370eb9ac53418
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -80,8 +76,6 @@ ActiveRecord::Schema.define(version: 20180818022728) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-<<<<<<< HEAD
-=======
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -99,7 +93,6 @@ ActiveRecord::Schema.define(version: 20180818022728) do
     t.index ["user_id"], name: "index_free_comments_on_user_id"
   end
 
->>>>>>> 7b6bbb6cebe173eb1de4227d862370eb9ac53418
   create_table "freelikes", force: :cascade do |t|
     t.integer  "free_id"
     t.integer  "user_id"
@@ -155,9 +148,6 @@ ActiveRecord::Schema.define(version: 20180818022728) do
     t.text     "function"
     t.text     "precaution"
     t.string   "image"
-  end
-
-  create_table "mypages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -246,10 +236,8 @@ ActiveRecord::Schema.define(version: 20180818022728) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
 end
