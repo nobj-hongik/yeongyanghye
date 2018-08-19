@@ -3,9 +3,12 @@
     <div class="col-12">
       <span class="luxury_space semi_bold-font"><%= comment.user.email %></span>
       <p class="com_content"><%= comment.comment %></p>
+      <% if !user_signed_in? %>
+      <%else%>
         <% if comment.user.id == current_user.id %>
-          <%= link_to "삭제", free_free_comment_path(@free, comment), method: "delete", class: "float-right info-size-sm luxury_space btn_micro hvr-right_red",:data => {:confirm => '진짜 지워요?'} %>
+          <%= link_to "삭제", free_free_comment_path(@free,comment), method: "delete", class: "float-right info-size-sm luxury_space btn_micro hvr-right_red",:data => {:confirm => '진짜 지워요?'} %>
         <% end %>
+       <%end%>
        <br>
     </div>
   </div>

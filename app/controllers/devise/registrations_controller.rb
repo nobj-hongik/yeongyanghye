@@ -119,11 +119,15 @@ class Devise::RegistrationsController < DeviseController
   # The path used after sign up for inactive accounts. You need to overwrite
   # this method in your own RegistrationsController.
   def after_inactive_sign_up_path_for(resource)
-
+    # respond_to do |format|
+    #   format.json { render
+    #   "alert('hello welcome')"
+    #   }
+    # end
     scope = Devise::Mapping.find_scope!(resource)
     router_name = Devise.mappings[scope].router_name
     context = router_name ? send(router_name) : self
-    context.respond_to?("/users/sign_up") ? context.root_path : "/users/sign_up"
+    context.respond_to?("/users/sign_in") ? context.root_path : "/users/sign_in"
 
     # set_flash_message(:notice, kind: "이메일 인증 해요")
 
