@@ -1,3 +1,9 @@
  <% if  %>
       <%= link_to (image_tag "출석체크하기"), autoevent_events_path	, method: "post" %>
+  
+<form accept-charset="UTF-8" action="autoevent" method="post">
+  <input name=user_id type="hidden" value=current_user.id />
+  <input name="eventime" type="hidden" value="Date.today" />
+</form>
+  
   <% end %>

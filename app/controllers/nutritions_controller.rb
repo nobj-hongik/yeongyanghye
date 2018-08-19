@@ -83,13 +83,13 @@ class NutritionsController < ApplicationController
       elsif
         @except = "쓰레기값"
       end
-      @nutritions = nutrition.find_by_sql(["SELECT * FROM nutritions WHERE MATCH (function, shape, companyinfo) AGAINST ( ? IN BOOLEAN MODE)
+      @nutritions = Nutrition.find_by_sql(["SELECT * FROM nutritions WHERE MATCH (function, shape, companyinfo) AGAINST ( ? IN BOOLEAN MODE)
                                    AND except NOT LIKE  ? ", @funcwords, @except])
       
       # @nutritions = nutrition.find(:all, :id => ["SELECT id FROM unutritions WHERE match(title,content) against(+%?% IN BOOLEAN MODE)",@search])
       # @nutritions = nutrition.where(:title => @search).order("created_at DESC")
     else
-      @nutritions = nutrition.order('created_at DESC')
+      @nutritions = Nutrition.order('created_at DESC')
     end                                  
     
   end

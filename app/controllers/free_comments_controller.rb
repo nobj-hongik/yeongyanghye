@@ -4,7 +4,7 @@ class FreeCommentsController < ApplicationController
     
     def create
         @free = Free.find(params[:free_id])
-        @new_comment =FreeComment.new(comment: params[:comment],
+        @new_comment = FreeComment.new(comment: params[:comment],
                                   free_id: params[:free_id],
                                   user_id: current_user.id)
         if @new_comment.save

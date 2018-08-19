@@ -2,12 +2,12 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   
   def autoevent
-    @event.user_id = current_user.id
+    @event = Event.new(event_params)
     @event.eventime = Date.today
+    @event.user_id = current_user.id
     @event.save
   end
   
-
   # GET /events
   # GET /events.json
   def index
