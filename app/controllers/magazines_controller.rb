@@ -7,11 +7,22 @@ class MagazinesController < ApplicationController
 
     if params[:category]
       category = params[:category]
-      @magazines = Magazine.where(:category => category)
+      @magazines = Magazine.where(category: category)
     else
       @magazines = Magazine.all
     end
 
+  end
+
+  def ajax_category
+    @magazines = Magazine.where(category: params[:category],is_selected: true).order("sequence asc").all
+    @m1 = @magazines.first
+    @m2 = @magazines.second
+    @m3 = @magazines.third
+    @m4 = @magazines.fourth
+    respond_to do |format|
+        format.js
+    end
   end
 
   # GET /magazines/1
