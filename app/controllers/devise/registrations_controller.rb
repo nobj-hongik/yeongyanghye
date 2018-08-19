@@ -4,6 +4,7 @@ class Devise::RegistrationsController < DeviseController
   prepend_before_action :require_no_authentication, only: [:new, :create, :cancel]
   prepend_before_action :authenticate_scope!, only: [:edit, :update, :destroy]
   prepend_before_action :set_minimum_password_length, only: [:new, :edit]
+  add_flash_types :signupemail
 
   # GET /resource/sign_up
   def new
@@ -118,10 +119,12 @@ class Devise::RegistrationsController < DeviseController
   # The path used after sign up for inactive accounts. You need to overwrite
   # this method in your own RegistrationsController.
   def after_inactive_sign_up_path_for(resource)
+
     scope = Devise::Mapping.find_scope!(resource)
     router_name = Devise.mappings[scope].router_name
     context = router_name ? send(router_name) : self
     context.respond_to?("/users/sign_up") ? context.root_path : "/users/sign_up"
+
     # set_flash_message(:notice, kind: "이메일 인증 해요")
 
 

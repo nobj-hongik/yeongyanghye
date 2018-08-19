@@ -1,85 +1,456 @@
-<div class="container checkfunction">
-  <form action="/nutritions" class="nutritionform">
-    <ul style="padding-left:25%; margin-bottom:0;">
-      <li>
-        <input type="checkbox" id="makeblood" value="혈액생성" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="makeblood" >혈액생성</label>
-      </li>
-      <li>
-        <input type="checkbox" id="condition" value="피로개선" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="condition">피로개선</label>
-      </li>
-      <li>
-        <input type="checkbox" id="energy" value="에너지" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="energy">에너지</label>
-      </li> 
-      <li>
-        <input type="checkbox" value="배변" id="enterocinesia" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="enterocinesia">배변</label>
-      </li>    
-      <li>
-        <input type="checkbox" value="세포보호" id="protectcell" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="protectcell">세포보호</label>
-      </li>
-      <li>
-        <input type="checkbox" value="피부" id="skin" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="skin" >피부</label>
-      </li>     
-    </ul>
-    <ul style="padding-left:25%;">
-      <li>
-        <input type="checkbox" value="면역력" id="immunity" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="immunity">면역력</label>
-      </li>
-      <li>
-        <input type="checkbox" value="시력" id="vision" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="vision">시력</label>
-      </li>
-      <li>
-        <input type="checkbox" value="뼈" id="bone" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="bone" >뼈</label>
-      </li> 
-      <li>
-        <input type="checkbox" value="혈액응고" id="coagulateblood" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="coagulateblood" >혈액응고</label>
-      </li>    
-      <li>
-        <input type="checkbox" value="모발" id="hair" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="hair">모발</label>
-      </li>    
-      <li>
-        <input type="checkbox" value="간건강" id="liver" class="checkboxinput" name="function">
-        <label class="checkboxlabel" for="liver" >간건강</label>
-      </li>     
-    </ul>  
-    <button type ="submit" value="submit" class="nutritionform" style="margin-left:50%">조회하기</button>
-  </form>
-  <hr>
+<div class="row">
+<div class="col-xs-0 col-md-1 col-xl-3"></div>    
+
+<div class="motherdiv col-xs-0 col-md-1 col-xl-5">
+  <%= form_tag(result_nutritions_path, method: "get") do %>
+  
+    
+    <div class="motherbox">
+      <p class="commendcheck">직업, 생활습관에 따른 영양해의 추천!</p>
+        <p>유형/생활습관</p>
+        <ul>
+          <li>
+            <input type="checkbox" id="student" value="수험생" class="checkboxinput0" name="target[]">
+            <label class="checkboxlabel" for="student" >수험생</label>
+          </li>
+          <li>
+            <input type="checkbox" id="alcohol" value="술꾼" class="checkboxinput0" name="target[]">
+            <label class="checkboxlabel" for="alcohol">술꾼</label>
+          </li>
+          <li>
+            <input type="checkbox" id="3" value="임산부" class="checkboxinput0" name="target[]">
+            <label class="checkboxlabel" for="3">임산부</label>
+          </li> 
+          <li>
+            <input type="checkbox" value="운동인" id="4" class="checkboxinput0" name="target[]">
+            <label class="checkboxlabel" for="4">운동인</label>
+          </li>    
+        </ul>
+    
+    <p class="commendcheck">선택하신 모든 기능을 포함한 제품을 추천합니다!</p>
+    
+        <p>기능</p>
+        <ul>
+          <li>
+            <input type="checkbox" id="func1" value="항산화" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func1" >항산화</label>
+          </li>
+          <li>
+            <input type="checkbox" id="func2" value="피로" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func2">피로</label>
+          </li>
+          <li>
+            <input type="checkbox" id="func3" value="피부" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func3">피부</label>
+          </li> 
+          <li>
+            <input type="checkbox" value="면역" id="func4" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func4">면역</label>
+          </li>    
+          <li>
+            <input type="checkbox" value="유산균" id="func5" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func5">유산균</label>
+          </li>
+          <li>
+            <input type="checkbox" value="체지방" id="func6" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func6" >체지방</label>
+          </li>     
+        </ul>
+        <ul>
+          <li>
+            <input type="checkbox" id="func7" value="장" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func7" >장</label>
+          </li>
+          <li>
+            <input type="checkbox" id="func8" value="눈" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func8">눈 건강</label>
+          </li>
+          <li>
+            <input type="checkbox" id="func9" value="혈행" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func9">혈행</label>
+          </li> 
+          <li>
+            <input type="checkbox" value="간" id="func10" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func10">간 건강</label>
+          </li>    
+          <li>
+            <input type="checkbox" value="기억력" id="func11" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func11">기억력</label>
+          </li>
+          <li>
+            <input type="checkbox" value="혈압" id="func12" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func12" >혈압</label>
+          </li>     
+        </ul>
+    
+    <p class="commendcheck">어떤 형태의 영양제가 좋으신가요?!</p>
+     
+        <p>형태</p>
+        <ul>
+          <li>
+            <input type="checkbox" id="shape1" value="알약" class="checkboxinput2" name="shape[]">
+            <label class="checkboxlabel" for="shape1" >알약</label>
+          </li>
+          <li>
+            <input type="checkbox" id="shape2" value="액상" class="checkboxinput2" name="shape[]">
+            <label class="checkboxlabel" for="shape2">액상</label>
+          </li>
+          <li>
+            <input type="checkbox" id="shape3" value="가루" class="checkboxinput2" name="shape[]">
+            <label class="checkboxlabel" for="shape3">가루</label>
+          </li>
+        </ul>
+    
+    <p class="commendcheck">잠시! 주의해야될 사항이 있나요?</p>
+     
+        <p>주의사항</p>
+        <ul>
+          <li>
+            <input type="radio" id="except1" value="임산" class="checkboxinput3" name="except">
+            <label class="checkboxlabel" for="except1" >임산부</label>
+          </li>
+          <li>
+            <input type="radio" id="except2" value="수유" class="checkboxinput3" name="except">
+            <label class="checkboxlabel" for="except2" >수유여성</label>
+          </li>
+          <li>
+            <input type="radio" id="except3" value="어린이" class="checkboxinput3" name="except">
+            <label class="checkboxlabel" for="except3">어린이</label>
+          </li>
+          <li>
+            <input type="radio" id="except4" value="당뇨" class="checkboxinput3" name="except">
+            <label class="checkboxlabel" for="except4">당뇨</label>
+          </li> 
+          <li>
+            <input type="radio" id="except5" value="특이체질" class="checkboxinput3" name="except">
+            <label class="checkboxlabel" for="except5">특이체질</label>
+          </li>       
+        </ul>
+    
+    <p class="commendcheck">회사에 대한 고려도 하시나요?</p>
+     
+        <p>기업분류</p>
+        <ul>
+          <li>
+            <input type="checkbox" id="companyinfo1" value="대기업" class="checkboxinput4" name="companyinfo[]">
+            <label class="checkboxlabel" for="companyinfo1" >대기업</label>
+          </li>
+          <li>
+            <input type="checkbox" id="companyinfo2" value="GMP" class="checkboxinput4" name="companyinfo[]">
+            <label class="checkboxlabel" for="companyinfo2">GMP</label>
+          </li>
+        </ul>
+    </div>
+    
 </div>
-<div class="container nutritioncontainer">
-  <h1>Recommended for you</h1>  
-  <div class="table-responsive">
-      <table class="table table-fit">
-          <thead>
-              <tr>
-                  <th>영양제 이름</th>
-                  <th>기능</th>
-              </tr>
-          </thead>
-          <tbody>
-              <% @nutritions.each do |nutrition| %>
-              <tr>
-                  <td style="width:10rem;"><%= link_to nutrition.name, nutrition %></td>
-                  <td><%= nutrition.function%></td>
-              </tr>
-              <% end %>
-          </tbody>
-      </table>
+<div class="col-xs-0 col-md-1 col-xl-2">
+  <div class="renmotherdiv" >
+    <div class="showdiv">
+      <h3 style="margin-bottom:1.3rem;">고객님의 맞춤 조건</h3>
+      <h5>선택하신 유형</h5> <div id='targetdiv'> </div>
+      <h5>선택하신 기능</h5> <div id='funcdiv'> </div>
+      <h5>선택하신 형태</h5> <div id='shapediv'> </div>
+      <h5>선택하신 주의사항</h5> <div id='exceptdiv'> </div>
+      <h5>선택하신 기업분류</h5> <div id='cominfodiv'> </div>
+    </div>
+    <button type ="submit" value="submit" class="nutritionform">조회하기</button>
+    <% end %>
   </div>
-  <%= link_to '영양제 등록하기', new_nutrition_path %>
+</div>   
+<div class="col-xs-0 col-md-1 col-xl-2"></div>   
 </div>
 
+<style>
+body{
+background-color:#fbfbfb;
+}
+  input[class="checkboxinput0"] + label {
+    background-color: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    color: #7b7b7b;
+    font-size: 16px;
+    text-align: center;
+    line-height: 52px;
+    border: 2px solid #f5f5f5;
+    border-radius: 2px;
+  }
+  input[class="checkboxinput0"]:checked + label {
+    border-color :orange;
+    color: orange;
+    font-weight: bold;
+  }      
+  input[class="checkboxinput1"] + label {
+    background-color: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    color: #7b7b7b;
+    font-size: 16px;
+    text-align: center;
+    line-height: 52px;
+    border: 2px solid #f5f5f5;
+    border-radius: 2px;
+  }
+  input[class="checkboxinput1"]:checked + label {
+    border-color :orange;
+    color: orange;
+    font-weight: bold;
+  }      
+  input[class="checkboxinput2"] + label {
+    background-color: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    color: #7b7b7b;
+    font-size: 16px;
+    text-align: center;
+    line-height: 52px;
+    border: 2px solid #f5f5f5;
+    border-radius: 2px;
+  }      
+  input[class="checkboxinput2"]:checked + label {
+    border-color :orange;
+    color: orange;
+    font-weight: bold;
+  }
+  input[class="checkboxinput3"] + label {
+    background-color: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    color: #7b7b7b;
+    font-size: 16px;
+    text-align: center;
+    line-height: 52px;
+    border: 2px solid #f5f5f5;
+    border-radius: 2px;
+  }      
+  input[class="checkboxinput3"]:checked + label {
+    border-color :orange;
+    color: orange;
+    font-weight: bold;
+  }      
+  input[class="checkboxinput4"] + label {
+    background-color: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    color: #7b7b7b;
+    font-size: 16px;
+    text-align: center;
+    line-height: 52px;
+    border: 2px solid #f5f5f5;
+    border-radius: 2px;
+  }      
+  input[class="checkboxinput4"]:checked + label {
+    border-color :orange;
+    color: orange;
+    font-weight: bold;
+  }  
+.commendcheck{
+    font-size:1rem;
+    font-weight: bold;
+    color:orange;
+}
 
-
+.motherdiv{
+    margin-top:5rem;
+}
+.renmotherdiv{
+  width:20rem;
+  margin-top:5rem;
+  top:8rem;
+  position: fixed;
+}
+.showdiv{
+  padding: 1rem 1rem;  
+  border: 2px solid #f5f5f5;
+  background-color:white;
+  border-radius: 2px;
+}
+.checkboxinput0{
+    display: none;
+}
+.checkboxinput1{
+    display: none;
+}
+.checkboxinput2{
+    display: none;
+}
+.checkboxinput3{
+    display: none;
+}
+.checkboxinput4{
+    display: none;
+}
+div>form>div>ul>li{
+    display: inline-block;
+    width:6rem;
+}
+div>form>div>div>ul{
+    padding-left:0;
+}
+.motherbox{
+    padding: 2rem 2rem;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 0 2px gray;
+}
+.checkboxlabel{
+    display: block;
+    width: 100%;
+    color: #7b7b7b;
+    font-size: 16px;
+    text-align: center;
+    line-height: 52px;
+    border: 2px solid #f5f5f5;
+    border-radius: 2px;
+}  
+.nutritionform{
+    margin-left:0;
+    color: white;
+    background-color: orange;
+    height: 4rem;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: none;
+}
+.renderedword{
+  padding-right:0.5rem;
+  display:inline;
+  margin-left:0;
+  color:orange;
+  font-weight: bold;
+}
+</style>
 <script>
-</script>
+
+$("#student").click(function(){                  //수험생을 클릭했을때
+            if($(this).is(":checked")) {
+              $("#func2").attr("checked", true);  //피로
+              var test = $("#func2").val();
+              var ptag = $('<p class="renderedword" id="' +test+ '">' +test+ '</p>');
+              ptag.insertAfter("#funcdiv");
+              $("#func4").attr("checked", true);  //면역
+              var test2 = $("#func4").val();
+              var ptag2 = $('<p class="renderedword" id="' +test2+ '">' +test2+ '</p>');
+              ptag2.insertAfter("#funcdiv");
+              $("#func8").attr("checked", true);  //눈건강
+              var test3 = $("#func8").val();
+              var ptag3 = $('<p class="renderedword" id="' +test3+ '">' +test3+ '</p>');
+              ptag3.insertAfter("#funcdiv");
+              $("#func11").attr("checked", true);  //기억력
+              var test4 = $("#func11").val();
+              var ptag4 = $('<p class="renderedword" id="' +test4+ '">' +test4+ '</p>');
+              ptag4.insertAfter("#funcdiv");                
+            }
+            else{
+              $("#func2").attr("checked", false);  //피로
+              var test = $("#func2").val();
+              $('#' + test).remove();
+              
+              $("#func4").attr("checked", false);  //면역
+              var test2 = $("#func4").val();
+              $('#' + test2).remove();
+              
+              $("#func8").attr("checked", false);  //눈건강
+              var test3 = $("#func8").val();
+              $('#' + test3).remove();              
+            
+              $("#func11").attr("checked", false);  //기억력
+              var test4 = $("#func11").val();
+              $('#' + test4).remove();              
+            }            
+        });
+        
+$(".checkboxinput0").click(function() {
+  if($(this).is(":checked")) {
+    var test = $(this).val();
+    var ptag = $('<p class="renderedword" id="' +test+ '">' +test+ '</p>');
+    ptag.insertAfter("#targetdiv");
+    }
+  else{
+    var test = $(this).val();
+    $('#' + test).remove();
+    }   
+});
+$(".checkboxinput1").click(function() {
+  if($(this).is(":checked")) {
+    var test = $(this).val();
+    var ptag = $('<p class="renderedword" id="' +test+ '">' +test+ '</p>');
+    ptag.insertAfter("#funcdiv");
+    }
+  else{
+    var test = $(this).val();
+    $('#' + test).remove();
+    }   
+});
+$(".checkboxinput2").click(function() {
+  if($(this).is(":checked")) {
+    var test = $(this).val();
+    var ptag = $('<p class="renderedword" id="' +test+ '">' +test+ '</p>');
+    ptag.insertAfter("#shapediv");
+    }
+  else{
+    var test = $(this).val();
+    $('#' + test).remove();
+    }   
+});
+// $(".checkboxinput3").click(function() {
+//   if($(this).is(":checked")) {
+//     var test = $(this).val();
+//     var ptag = $('<p id="' +test+ '">' +test+ '</p>');
+//     ptag.insertAfter("#exceptdiv");
+//     }
+//   else{
+//     var test = $(this).val();
+//     $('#' + test).remove();
+//     }   
+// });
+var first=false; 
+var temp; 
+$(".checkboxinput3").click(function() {
+  
+  if($(this).is(":checked") && first == false){                    //첫번째 클릭이면
+    var test = $(this).val();
+    temp = test;
+    var ptag = $('<p class="renderedword" id="' +test+ '">' +test+ '</p>');
+    ptag.insertAfter("#exceptdiv");
+    first=true;
+    console.log($(this).is(":checked"));
+    console.log(first);
+  }  
+  else if($(this).is(":checked") && first==true && $(this).val() != temp ) {       //다른 것을 클릭하면
+    $('#' + temp).remove();
+    var test = $(this).val();
+    temp = test;
+    var ptag = $('<p class="renderedword" id="' +test+ '">' +test+ '</p>');
+    ptag.insertAfter("#exceptdiv");
+  }
+  else{                                                          //자기 자신을 클릭하면          
+    var test = $(this).val();
+    $('#' + test).remove();
+    $(this).prop("checked", false);
+    first=false;
+    }   
+});
+
+$(".checkboxinput4").click(function() {
+  if($(this).is(":checked")) {
+    var test = $(this).val();
+    var ptag = $('<p class="renderedword" id="' +test+ '">' +test+ '</p>');
+    ptag.insertAfter("#cominfodiv");
+    }
+  else{
+    var test = $(this).val();
+    $('#' + test).remove();
+    }   
+});
+
+
+
+
+</script>    

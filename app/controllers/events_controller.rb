@@ -1,5 +1,12 @@
-class MeetingsController < ApplicationController
-  before_action :set_meeting, only: [:show, :edit, :update, :destroy]
+class EventsController < ApplicationController
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  
+  def autoevent
+    @event.user_id = current_user.id
+    @event.eventime = Date.today
+    @event.save
+  end
+  
 
   # GET /events
   # GET /events.json
@@ -60,7 +67,7 @@ class MeetingsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -70,6 +77,10 @@ class MeetingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:eventime, :userid)
+      params.require(:event).permit(:eventime, :user_id)
     end
-end
+  end
+  
+  
+
+  

@@ -29,8 +29,8 @@ class NutritionsController < ApplicationController
   def edit
   end
 
-  # POST /nutritions
-  # POST /nutritions.json
+  # nutrition /nutritions
+  # nutrition /nutritions.json
   def create
     @nutrition = Nutrition.new(nutrition_params)
 
@@ -68,7 +68,31 @@ class NutritionsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def result
+   
+    if params[:func]
+      # @search = params[:search]
+      # @func1 = '+' + params[:func][i] + '*'
+      # @piro = ' -' + params[:piro] + '*'
+      # @industry = ' +' + params[:skin] + '*'
+      # @computer = ' +' + params[:imuen] + '*'
+      
+      make_params_ary
+      if params[:except]
+        @except = '%' + params[:except] + '%'
+      elsif
+        @except = "쓰레기값"
+      end
+      @nutritions = nutrition.find_by_sql(["SELECT * FROM nutritions WHERE MATCH (function, shape, companyinfo) AGAINST ( ? IN BOOLEAN MODE)
+                                   AND except NOT LIKE  ? ", @funcwords, @except])
+      
+      # @nutritions = nutrition.find(:all, :id => ["SELECT id FROM unutritions WHERE match(title,content) against(+%?% IN BOOLEAN MODE)",@search])
+      # @nutritions = nutrition.where(:title => @search).order("created_at DESC")
+    else
+      @nutritions = nutrition.order('created_at DESC')
+    end                                  
+    
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_nutrition
@@ -79,4 +103,26 @@ class NutritionsController < ApplicationController
     def nutrition_params
       params.require(:nutrition).permit(:name, :brand, :character, :function, :precaution, :user_id)
     end
+    
+    def make_params_ary
+          @funcwords = "defaultword"
+          @exceptwords = "-defaultword"
+      for i in 0..11
+        if params[:func]
+          @funcwords = @funcwords + ' +' + params[:func][i] + '*' if params[:func][i]
+        end  
+      end
+      
+      for j in 0..2
+        if params[:shape]
+          @funcwords = @funcwords + ' +' + params[:shape][j] + '*' if params[:shape][j]
+        end
+      end
+      
+      for t in 0..1
+        if params[:companyinfo]
+          @funcwords = @funcwords + ' +' + params[:companyinfo][t] + '*' if params[:companyinfo][t]
+        end
+      end
+    end    
 end

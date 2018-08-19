@@ -58,7 +58,7 @@
           <span class="title"><%= comment.user.id %></span>
           <p class="pre-line"><%= comment.content %></p>
           <% if comment.user.id == current_user.id %>
-            <div><%= link_to "삭제", magazine_magazine_comments_path(@magazine, comment), method: "delete" %></div>
+            <div><%= link_to "삭제", magazine_magazine_comment_path(@magazine, comment), method: "delete" %></div>
           <% end %>
         </li>
       <% end %>

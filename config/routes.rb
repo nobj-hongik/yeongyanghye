@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :mypages
+  resources :aftersignup
+  resources :events, only: [:create] do
+    collection do 
+      post "autoevent" 
+    end
+  end
+  
+  get 'event/new'
   resource :calendar, only: [:show], controller: :calendar
   get 'calendar/show'
 
@@ -6,7 +15,11 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, :controllers => { registration: 'registrations' }
-  resources :nutritions
+  resources :nutritions do
+    collection do
+      get 'result'
+    end
+  end
   resources :questions do
     resources :question_comments, only: [:create, :destroy]
     post "/question_like", to: "question_likes#like_toggle"
@@ -23,7 +36,7 @@ Rails.application.routes.draw do
   
   resources :frees do
     post "/freelikes", to: "freelikes#like_toggle"
-    resources :free_comments, only: [:create]
+    resources :free_comments, only: [:create, :destroy]
   end
 
   # CalendarExample::Application.routes.draw do
