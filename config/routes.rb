@@ -1,10 +1,25 @@
 Rails.application.routes.draw do
+  resources :mypages
+  resources :aftersignup
+  resources :events, only: [:create] do
+    collection do
+      post "autoevent"
+    end
+  end
+
+  get 'event/new'
+  resource :calendar, only: [:show], controller: :calendar
+  get 'calendar/show'
 
   root 'home#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
-  resources :nutritions
+  devise_for :users, :controllers => { registration: 'registrations' }
+  resources :nutritions do
+    collection do
+      get 'result'
+    end
+  end
   resources :questions do
     resources :question_comments, only: [:create, :destroy]
     post "/question_like", to: "question_likes#like_toggle"
@@ -20,9 +35,10 @@ Rails.application.routes.draw do
   end
 
   resources :frees do
-    post '/freelikes' => 'freelikes#like_toggle'
+    post "/freelikes", to: "freelikes#like_toggle"
+    resources :free_comments, only: [:create, :destroy]
   end
-
+  get 'calendar/show'
   resources :refined_entries, only: :index
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,5 +1,33 @@
-<h1>New Free</h1>
-
-<%= render 'form', free: @free %>
-
-<%= link_to 'Back', frees_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-0 col-md-1 col-lg-2"></div>
+    <div class="col-xs-12 col-md-10 col-lg-8">
+      <h2 class="title_size slim-font mg-top-med">
+        <a href="/frees" class="btn_micro hvr-right float-right">목록으로</a>
+        <span class="bold-font orange">영양해</span> 자유게시판
+      </h2>
+      <p class="semi_slim-font mg-bottom-med luxury_space info-size">
+        아무말이나 써주세용
+      </p>
+      <%= form_for @free do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <div class="form-group ">
+          <%= f.label :title, "제목" ,class: "bold-font control-label luxury_space mg-bottom-sm"%><br />
+          <%= f.text_field :title, class: "form-control" ,rows: "5" %>
+        </div>
+        <br>
+        <div class="form-group ">
+          <%= f.label :content, "내용" ,class: "bold-font control-label luxury_space"%>
+          <%= tinymce :language => "ko" %>
+          <%= f.text_area :content, class: "form-control tinymce" ,rows: "18" %>
+        </div>
+        <br>
+        <div class="form-group" style="text-align:center;">
+          <%= f.button "글쓰기", class: "small_compact_btn hvr-right" %>
+        </div>
+        <br><br>
+      <% end %>
+    </div>
+    <div class="col-xs-0 col-md-1 col-lg-2"></div>
+  </div>
+</div>

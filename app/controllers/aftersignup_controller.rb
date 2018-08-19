@@ -1,0 +1,2 @@
+class AftersignupController < ApplicationController
+end

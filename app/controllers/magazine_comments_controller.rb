@@ -13,14 +13,17 @@ class MagazineCommentsController < ApplicationController
     end
     
     def destroy
-        @magazin_comment.destroy
-        redirect_to magazine_path(params[:magazine_id]) # :back 과 같음
+        if @magazincomment.destroy
+          redirect_to magazine_path(params[:magazin_id])
+        end        
     end
     
     
     private 
     
     def is_owner?
-        redirect_to @magazin unless current_user == @magazin_comment.user
+        # debugger
+        @magazincomment = MagazineComment.find_by(id: params[:id])
+        redirect_to root_path if @magazincomment.user.id != current_user.id
     end    
 end
