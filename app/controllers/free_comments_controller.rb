@@ -11,10 +11,20 @@ class FreeCommentsController < ApplicationController
           redirect_to :back
         end    
     end
-    
+
     def destroy
         if @freecomment.destroy
             redirect_to free_path(params[:free_id])
+        end
+    end
+    
+    def update
+        @free = Free.find(params[:free_id])
+        @find_comment = FreeComment.find(comment: params[:comment],
+                                  free_id: params[:free_id],
+                                  user_id: current_user.id)
+        if @find_comment.save
+            redirect_to :back
         end
     end
   

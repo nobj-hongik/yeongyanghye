@@ -6,7 +6,6 @@ Rails.application.routes.draw do
       post "autoevent"
     end
   end
-
   get 'event/new'
   resource :calendar, only: [:show], controller: :calendar
   get 'calendar/show'
@@ -36,7 +35,7 @@ Rails.application.routes.draw do
 
   resources :frees do
     post "/freelikes", to: "freelikes#like_toggle"
-    resources :free_comments, only: [:create, :destroy]
+    resources :free_comments, only: [:create, :destroy, :update]
   end
   get 'calendar/show'
   resources :refined_entries, only: :index

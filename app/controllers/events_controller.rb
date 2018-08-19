@@ -3,9 +3,7 @@ class EventsController < ApplicationController
   
   def autoevent
     @event = Event.new(event_params)
-    @event.eventime = Date.today
-    @event.user_id = current_user.id
-    @event.save
+    
   end
   
   # GET /events
@@ -21,7 +19,10 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = Event.new
+    @event = Event.new(event_params)
+    @event.eventime = Date.today
+    @event.user_id = current_user.id
+    @event.save
   end
 
   # GET /events/1/edit
@@ -35,7 +36,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to calendar_url, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -67,7 +68,7 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event

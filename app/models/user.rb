@@ -31,4 +31,11 @@ class User < ActiveRecord::Base
     end
   end
   
+  def is_created?(object) #지금 이걸로 중복된거 생성안되게 미리 확인하고 생성되게 
+      if object.user_id == current_user.id && object.eventime = Date.today
+        return false 
+      else 
+        return true 
+      end
+  end
 end
