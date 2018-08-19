@@ -3,7 +3,7 @@
   <%= bootstrap_form_for @magazine do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.text_field :title, label: "제목", :required => true %>
-      <%= f.select :category, Question::CATEGORY.keys, { label: "게시물 종류를 선택해주세요!"}%>
+      <%= f.select :category, Magazine::CATEGORY.keys, { label: "게시물 종류를 선택해주세요!"}%>
       <%= f.text_area :content, label: "좋은 글을 써주세요!",:required => true%>
       <%= f.file_field :image, label: "대표사진 선택!", accept: 'image/png,image/gif,image/jpeg' %>
       <div class="h-container">

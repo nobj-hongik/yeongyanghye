@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable
+         #:confirmable
   has_many :nutritions
   has_many :magazines
   has_many :magazine_comments
@@ -30,6 +31,7 @@ class User < ActiveRecord::Base
       return false
     end
   end
+<<<<<<< HEAD
   
   def is_created?(object) #지금 이걸로 중복된거 생성안되게 미리 확인하고 생성되게 
       if object.user_id == current_user.id && object.eventime = Date.today
@@ -38,4 +40,7 @@ class User < ActiveRecord::Base
         return true 
       end
   end
+=======
+
+>>>>>>> 3e464df145074010fc13d03beadc8e88dc35ed63
 end
