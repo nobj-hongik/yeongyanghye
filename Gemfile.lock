@@ -307,11 +307,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
-<<<<<<< HEAD
   naver-sdk
-=======
   omniauth
->>>>>>> 7b6bbb6cebe173eb1de4227d862370eb9ac53418
   rails (= 5.0.6)
   rails_db
   sass-rails (~> 5.0)
