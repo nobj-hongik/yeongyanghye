@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :magazines
   has_many :magazine_comments
   has_many :magazinelikes
-  has_many :l_magazines, through: :magazinelikes, source: :user
+  has_many :l_magazines, through: :magazinelikes, source: :magazine
   has_many :questions
   has_many :question_comments
   has_many :answers

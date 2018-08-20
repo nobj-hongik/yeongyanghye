@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'omniauth-kakao'
 
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'

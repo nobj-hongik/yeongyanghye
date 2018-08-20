@@ -1,12 +1,32 @@
-
-  <% if Event.where(:user_id => 'current_user.id', :eventime => Date.today).blank? %>
-    <%= form_for Event.new do |f| %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.hidden_field :eventime, value: Date.today %>
-      
-    <button type="submit" class="btn btn-secondary" id="marketenroll">등록하기</button>
-    <% end %>
-  <% else %>       
-    <%= "이미 출첵했어요"%>
+<% if Event.where(:user_id => 'current_user.id', :eventime => Date.today).blank? %>
+  <%= form_for Event.new do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :eventime, value: Date.today %>
+    
+  <button type="submit" class="btn btn-secondary" id="marketenroll">등록하기</button>
   <% end %>
-
+<% else %>       
+  <%= "이미 출첵했어요"%>
+<% end %>
+<h2>좋아요한 메거진</h2>
+<div class="row">
+  <% @user.l_magazines.each do |magazine| %>
+    <div class="col-sm-12 col-md-6 col-xl-3">
+      <a href = "/magazines/<%= magazine.id %>">
+        <div class="card h-card">
+          <div class="h-img-wrapper">
+            <% if !magazine.image.blank? %>
+              <img class="card-img-top h-img" src="<%= magazine.image %>" alt="Card image cap">
+            <% else %>
+              <%= image_tag("placeholder_fest.jpeg", class: "card-img-top h-img") %>
+            <% end %>
+          </div>
+          <div class="card-body">
+            <h5 class="h-card-title" style="color:#09083a;"><%= magazine.title %></h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  <% end %>
+</div>
+<%= @user.id %>
