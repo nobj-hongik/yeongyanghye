@@ -1,6 +1,8 @@
 class MagazinesController < ApplicationController
   before_action :set_magazine, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
+  before_action :is_owner?, only: [:edit, :update, :destroy]
+  
   # GET /magazines
   # GET /magazines.json
   def index
@@ -89,4 +91,9 @@ class MagazinesController < ApplicationController
     def magazine_params
       params.require(:magazine).permit(:title, :content, :category, :image, :user_id)
     end
+    
+    def is_owner?
+        redirect_to @magazine unless current_user == @magazine.user
+    end   
+    
 end

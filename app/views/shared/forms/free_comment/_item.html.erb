@@ -8,15 +8,10 @@
         <% if comment.user.id == current_user.id %>
         <%= form_tag free_free_comments_path(@free) do %>
         <div class="form-group" style="padding-bottom:10px;">
-          <div class="input-field smaller">
-            <%= text_area_tag :comment, nil, class: "form-control sm_size", required: true %>
-            </div><br>
-            <div class="input-field float-right">
-              <%= button_tag "수정하기", class: "small_compact_btn hvr-right" %>
-            </div>
         </div>
           <%= link_to "삭제", free_free_comment_path(@free,comment), method: "delete", class: "float-right info-size-sm luxury_space btn_micro hvr-right_red",:data => {:confirm => '진짜 지워요?'} %>
         <% end %>
+       <%end%>
        <%end%>
        <br>
     </div>

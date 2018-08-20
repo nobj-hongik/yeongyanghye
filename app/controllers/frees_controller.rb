@@ -1,6 +1,6 @@
 class FreesController < InheritedResources::Base
-
   before_action :authenticate_user!, only: [:new, :edit]
+  before_action :is_owner?, only: [:edit, :update, :destroy]
   
   
   private
@@ -9,4 +9,7 @@ class FreesController < InheritedResources::Base
       params.require(:free).permit(:title, :content, :user_id)
     end
     
+    def is_owner?
+        redirect_to @free unless current_user == @free.user
+    end      
 end
