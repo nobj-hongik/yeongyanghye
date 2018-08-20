@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180819154653) do
+ActiveRecord::Schema.define(version: 20180820062613) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -81,6 +81,18 @@ ActiveRecord::Schema.define(version: 20180819154653) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.date     "eventime"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.string   "followable_type",                 null: false
+    t.integer  "followable_id",                   null: false
+    t.string   "follower_type",                   null: false
+    t.integer  "follower_id",                     null: false
+    t.boolean  "blocked",         default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["followable_id", "followable_type"], name: "fk_followables"
+    t.index ["follower_id", "follower_type"], name: "fk_follows"
   end
 
   create_table "free_comments", force: :cascade do |t|

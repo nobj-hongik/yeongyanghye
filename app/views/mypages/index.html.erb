@@ -1,12 +1,12 @@
 
-  <% if @event.event_users.include?(current_user) %>
+  <% if Event.where(:user_id => 'current_user.id', :eventime => Date.today).blank? %>
     <%= form_for Event.new do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :eventime, value: Date.today %>
       
     <button type="submit" class="btn btn-secondary" id="marketenroll">등록하기</button>
     <% end %>
-            
-        
-<% end %>
+  <% else %>       
+    <%= "이미 출첵했어요"%>
+  <% end %>
 

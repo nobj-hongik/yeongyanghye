@@ -81,26 +81,56 @@
     </div>
   </section>
   <section class="magazine-index" >
-    <div class="magazine-title">
-      <span class="title-text">MAGAZINE</span>
+  <div class="magazine-title">
+    <span class="title-text">MAGAZINE</span>
+  </div>
+
+  <div class=“sub-nav”>
+  <div id="navigation-wrapper">
+    <div id="menu-1" class="menu">
+      <span>건강관리</span>
     </div>
-    <div class=“sub-nav”>
-      <div id="navigation-wrapper">
-        <% Magazine::CATEGORY.each do |k,v| %>
-          <%= link_to magazine_ajax_path(v), :remote => true do %>
-            <div id="menu-1" class="menu">
-              <span><%= k %></span>
-            </div>
-          <% end %>
-        <% end %>
+    <div id="menu-1" class="menu">
+      <span>미용</span>
+    </div>
+    <div id="menu-1" class="menu">
+      <span>다이어트</span>
+    </div>
+    <div id="menu-1" class="menu">
+      <span>한방관리</span>
+    </div>
+    <div id="menu-1" class="menu">
+      <span>제철관리</span>
+    </div>
+    <div id="menu-1" class="menu">
+      <span>영양 백과사전</span>
+    </div>
+    <div id="menu-1" class="menu">
+      <span>운동/헬스</span>
+    </div>
+    <div id="menu-1" class="menu">
+      <span>홍익시디</span>
+    </div>
+  </div>
+</div>
+
+<div class="magazine-wrapper">
+  <div class="magazine">
+    <div class='a'></div>
+    <div class='b'>
+      <div class='d'></div>
+      <div class='e'>
+        <div class='f'></div>
+        <div class='g'></div>
+        <div class='h'></div>
       </div>
     </div>
-    <div id="ajaxrender">
-      <%= render partial: 'magazines/magazine_wrapper' %>
-    </div>
-  </section>
-  <section class="banner">
+    <div class='c'></div>
+  </div>
+</section>
+<section class="banner">
 
-  </section>
+</section>
 <footer class="footer">
 </footer>
+

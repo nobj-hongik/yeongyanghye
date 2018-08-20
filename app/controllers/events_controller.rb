@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     
   end
-  
+
   # GET /events
   # GET /events.json
   def index

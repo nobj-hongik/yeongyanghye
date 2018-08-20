@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'

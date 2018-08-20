@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :nutritions do
     collection do
       get 'result'
+      post '/posts/:id/follow', to: 'follows#nutri_follow_toggle', as: 'nutri_follow'
     end
   end
   resources :questions do

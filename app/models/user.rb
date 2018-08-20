@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
-         #:confirmable
+         #:confirmable 이메일 인증 
   has_many :nutritions
   has_many :magazines
   has_many :magazine_comments
@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   has_many :free_comments
   has_many :liked_frees, through: :freelikes, source: :free
   has_many :events
+  acts_as_followable #팔로우 받을때
+  acts_as_follower #팔로우할때
 
   # 좋아하는지 아닌지 판별하는 인스턴스 매소드 (현성형 매거진 좋아요도 추가가능)
   def is_like?(object)
@@ -31,12 +33,18 @@ class User < ActiveRecord::Base
       return false
     end
   end
-  
-  def is_created?(object) #지금 이걸로 중복된거 생성안되게 미리 확인하고 생성되게 
-      if object.user_id == current_user.id && object.eventime = Date.today
+
+  def currentuserevents
+    @currentuserevents = Event.find(:all, :conditions => { :user_id => 'current_user.id' , :eventime => 'Date.today' })
+
+  end
+
+  def is_created? #지금 이걸로 중복된거 생성안되게 미리 확인하고 생성되게 
+      if @currentuserevents.size >= 1
         return false 
       else 
         return true 
       end
   end
+
 end
