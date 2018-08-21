@@ -80,8 +80,8 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:eventime, :user_id)
     end
-  end
-  
 end
+  
+
 
   

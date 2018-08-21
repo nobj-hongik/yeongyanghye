@@ -23,13 +23,13 @@
     <%= @nutrition.except %>
   </p>
 </div>
-<div style="text-align:center;">
-  <% if !@nutrition.followed_by?(current_user)%>
-      <%=link_to '내몸에 담기',nutri_follow_nutritions_path(@nutrition), method: :post %>
-  <% else %>
-      <%=link_to '내몸에서 빼기',nutri_follow_nutritions_path(@nutrition), method: :post %>
-  <% end %>
-</div>
+  <div style="text-align:center;">
+    <% if !@nutrition.followed_by?(current_user)%>
+        <%=link_to '내몸에 담기',nutri_follow_nutritions_path(@nutrition), method: :post %>
+    <% else %>
+        <%=link_to '내몸에서 빼기',nutri_follow_nutritions_path(@nutrition), method: :post %>
+    <% end %>
+  </div>
 
 <section class="magazine_mainsection" style="background-color: #ff7f0f;height:30vh;
         width:100%;

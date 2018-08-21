@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-
+  root 'home#index'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" , :registrations=>'registrations'  }
   
   get 'auth/:provider/callback', to: 'users#create'
   get 'auth/failure', to: redirect('/')
@@ -18,10 +21,6 @@ Rails.application.routes.draw do
   resource :calendar, only: [:show], controller: :calendar
   get 'calendar/show'
 
-  root 'home#index'
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  devise_for :users, :controllers => { registration: 'registrations', omniauth_callbacks: 'user/omniauth_callbacks' }
 
   resources :nutritions do
     collection do
