@@ -1,4 +1,7 @@
-<% if Event.where(:user_id => 'current_user.id', :eventime => Date.today).blank? %>
+
+
+<% if self.event_usertoday_if_exists %>
+
   <%= form_for Event.new do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :eventime, value: Date.today %>
@@ -8,6 +11,7 @@
 <% else %>       
   <%= "이미 출첵했어요"%>
 <% end %>
+
 <h2>좋아요한 메거진</h2>
 <div class="row">
   <% @user.l_magazines.each do |magazine| %>

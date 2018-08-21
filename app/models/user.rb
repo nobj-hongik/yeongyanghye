@@ -46,5 +46,18 @@ class User < ActiveRecord::Base
         return true 
       end
   end
-
+  
+  def event_usertoday_if_exists
+    record = Event.select(:eventime).find_by(Date.today)
+    if record
+      if record.user_id == current_user.id
+        true
+      else
+        false
+      end
+    else
+      nil # explicit nil so other developers know exactly what's going on
+    end
+  end
+  
 end
