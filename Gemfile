@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
-
-gem 'omniauth-kakao'
-
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
+gem 'omniauth-kakao', :git => 'git://github.com/hcn1519/omniauth-kakao'
+gem 'mysql2', '< 0.5'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
@@ -13,7 +14,7 @@ gem 'omniauth'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

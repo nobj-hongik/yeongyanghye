@@ -1,6 +1,4 @@
-
-
-<% if self.event_usertoday_if_exists %>
+<% if current_user.events.where(eventime: Date.today).blank? %>
 
   <%= form_for Event.new do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>

@@ -7,8 +7,8 @@ Rails.application.configure do
     :address              => 'smtp.gmail.com',
     :domain               => 'mail.google.com',
     :port                 => 587,
-    :user_name            => "taewankim0925@likelion.org",
-    :password             => "xodhks09",
+    :user_name            => "yeongyanghye@gmail.com",
+    :password             => "gustjdxodhksdPdms",
     :authentication       => 'login',
     :enable_starttls_auto => true
   }
