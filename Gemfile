@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'figaro'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 gem 'omniauth-kakao', :git => 'git://github.com/hcn1519/omniauth-kakao'

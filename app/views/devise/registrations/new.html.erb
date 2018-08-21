@@ -33,6 +33,7 @@ var con=confirm("가입 이메일이 해당 이메일로 전송 되었습니다.
                      <em>(<%= @minimum_password_length %> characters minimum)</em>
                      <% end %><br />
                      <%= f.password_field :password, autocomplete: "off" %>
+                     <%= f.submit "가입하기", class: "btn btn-primary", :onClick=>"empty()" %>
                      <%end%>
                    </div> 
                   <br>
@@ -150,5 +151,8 @@ var con=confirm("가입 이메일이 해당 이메일로 전송 되었습니다.
 .sign_in_link:hover{
   color:black;
   font-weight:bold;
+}
+.wrapperrn{
+  
 }
 </style>

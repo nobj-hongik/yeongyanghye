@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'register/info1'
+
+  get 'register/info2'
+
   resources :mypages
   resources :aftersignup
   resources :events, only: [:create] do
@@ -13,7 +17,8 @@ Rails.application.routes.draw do
   root 'home#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, :controllers => { registration: 'registrations' }
+  devise_for :users, :controllers => { registration: 'registrations', omniauth_callbacks: 'user/omniauth_callbacks' }
+
   resources :nutritions do
     collection do
       get 'result'
