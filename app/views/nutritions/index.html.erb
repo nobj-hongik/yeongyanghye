@@ -164,166 +164,12 @@
 body{
 background-color:#fbfbfb;
 }
-  input[class="checkboxinput0"] + label {
-    background-color: none;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-    color: #7b7b7b;
-    font-size: 16px;
-    text-align: center;
-    line-height: 52px;
-    border: 2px solid #f5f5f5;
-    border-radius: 2px;
-  }
-  input[class="checkboxinput0"]:checked + label {
-    border-color :orange;
-    color: orange;
-    font-weight: bold;
-  }      
-  input[class="checkboxinput1"] + label {
-    background-color: none;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-    color: #7b7b7b;
-    font-size: 16px;
-    text-align: center;
-    line-height: 52px;
-    border: 2px solid #f5f5f5;
-    border-radius: 2px;
-  }
-  input[class="checkboxinput1"]:checked + label {
-    border-color :orange;
-    color: orange;
-    font-weight: bold;
-  }      
-  input[class="checkboxinput2"] + label {
-    background-color: none;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-    color: #7b7b7b;
-    font-size: 16px;
-    text-align: center;
-    line-height: 52px;
-    border: 2px solid #f5f5f5;
-    border-radius: 2px;
-  }      
-  input[class="checkboxinput2"]:checked + label {
-    border-color :orange;
-    color: orange;
-    font-weight: bold;
-  }
-  input[class="checkboxinput3"] + label {
-    background-color: none;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-    color: #7b7b7b;
-    font-size: 16px;
-    text-align: center;
-    line-height: 52px;
-    border: 2px solid #f5f5f5;
-    border-radius: 2px;
-  }      
-  input[class="checkboxinput3"]:checked + label {
-    border-color :orange;
-    color: orange;
-    font-weight: bold;
-  }      
-  input[class="checkboxinput4"] + label {
-    background-color: none;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-    color: #7b7b7b;
-    font-size: 16px;
-    text-align: center;
-    line-height: 52px;
-    border: 2px solid #f5f5f5;
-    border-radius: 2px;
-  }      
-  input[class="checkboxinput4"]:checked + label {
-    border-color :orange;
-    color: orange;
-    font-weight: bold;
-  }  
-.commendcheck{
-    font-size:1rem;
-    font-weight: bold;
-    color:orange;
-}
-
-.motherdiv{
-    margin-top:5rem;
-}
-.renmotherdiv{
-  width:20rem;
-  margin-top:5rem;
-  top:8rem;
-  position: fixed;
-}
-.showdiv{
-  padding: 1rem 1rem;  
-  border: 2px solid #f5f5f5;
-  background-color:white;
-  border-radius: 2px;
-}
-.checkboxinput0{
-    display: none;
-}
-.checkboxinput1{
-    display: none;
-}
-.checkboxinput2{
-    display: none;
-}
-.checkboxinput3{
-    display: none;
-}
-.checkboxinput4{
-    display: none;
-}
 div>form>div>ul>li{
     display: inline-block;
     width:6rem;
 }
 div>form>div>div>ul{
     padding-left:0;
-}
-.motherbox{
-    padding: 2rem 2rem;
-    background-color: white;
-    border-radius: 2px;
-    box-shadow: 0 0 2px gray;
-}
-.checkboxlabel{
-    display: block;
-    width: 100%;
-    color: #7b7b7b;
-    font-size: 16px;
-    text-align: center;
-    line-height: 52px;
-    border: 2px solid #f5f5f5;
-    border-radius: 2px;
-}  
-.nutritionform{
-    margin-left:0;
-    color: white;
-    background-color: orange;
-    height: 4rem;
-    width: 100%;
-    font-size: 1.4rem;
-    font-weight: bold;
-    border: none;
-}
-.renderedword{
-  padding-right:0.5rem;
-  display:inline;
-  margin-left:0;
-  color:orange;
-  font-weight: bold;
 }
 </style>
 <script>
@@ -399,17 +245,6 @@ $(".checkboxinput2").click(function() {
     $('#' + test).remove();
     }   
 });
-// $(".checkboxinput3").click(function() {
-//   if($(this).is(":checked")) {
-//     var test = $(this).val();
-//     var ptag = $('<p id="' +test+ '">' +test+ '</p>');
-//     ptag.insertAfter("#exceptdiv");
-//     }
-//   else{
-//     var test = $(this).val();
-//     $('#' + test).remove();
-//     }   
-// });
 var first=false; 
 var temp; 
 $(".checkboxinput3").click(function() {

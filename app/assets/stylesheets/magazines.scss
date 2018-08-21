@@ -34,3 +34,23 @@
         margin-top: 3rem;
     }
 }
+.magazine_checkboxinput{
+    display: none;
+}
+input[class="magazine_checkboxinput"] + label {
+    background-color: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    color: #7b7b7b;
+    font-size: 16px;
+    text-align: center;
+    line-height: 52px;
+    border: 2px solid #f5f5f5;
+    border-radius: 2px;
+}
+input[class="magazine_checkboxinput"]:checked + label {
+    border-color :orange;
+    color: orange;
+    font-weight: bold;
+}    

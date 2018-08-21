@@ -260,7 +260,7 @@ Devise.setup do |config|
 
   config.omniauth :facebook, ENV["Facebook_Key"], ENV["Facebook_Secret"]
   config.omniauth :google_oauth2, ENV["Google_Key"], ENV["Google_Secret"]
-  config.omniauth :kakao, ENV["Kakao_Key"], :redirect_path => "/users/auth/kakao/callback"
+  config.omniauth :kakao, ENV["674b81e77c8b32353d3c6bca3abcd076"], :redirect_path => "/auth/kakao/callback"
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

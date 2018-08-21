@@ -19,7 +19,11 @@
         <img style="position:absolute;height:3rem;width:auto;display:block;right:0;" src="https://kmug.co.kr/data/file/design/data_design_1426742142_%EA%B1%B4%EA%B0%95%EA%B8%B0%EB%8A%A5%EC%8B%9D%ED%92%88.jpg" alt="Card image cap">
         <div style="position:absolute;top:2rem;width:70%;">
             <%= link_to '상세정보', nutrition, {style:"margin-bottom: 10px;", class: "rendershowlink"} %>
-            <%= link_to '내몸에담기', '#', {class: "rendershowlink"} %>
+            <% if !nutrition.followed_by?(current_user)%>
+              <%=link_to '내몸에 담기',nutri_follow_nutritions_path(nutrition), method: :post, class: "rendershowlink" %>
+            <% else %>
+              <%=link_to '내몸에서 빼기',nutri_follow_nutritions_path(nutrition), method: :post, class: "rendershowlink" %>
+            <% end %>
         </div>
     </div>
     </div>

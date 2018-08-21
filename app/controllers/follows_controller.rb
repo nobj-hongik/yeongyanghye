@@ -8,7 +8,7 @@ class FollowsController < ApplicationController
         else
             current_user.stop_following(@nutrition)
         end
-        redirect_to @nutrition        
+        redirect_to :back       
     end
     
 end

@@ -31,4 +31,24 @@
     </div>
   <% end %>
 </div>
-<%= @user.id %>
+<h2>내 몸안의 영양제</h2>
+<div class="row">
+  <% @user.following_nutritions.each do |nutrition| %>
+    <div class="col-sm-12 col-md-6 col-xl-3">
+      <a href = "/nutritions/<%= nutrition.id %>">
+        <div class="card h-card">
+          <div class="h-img-wrapper">
+            <% if !nutrition.image.blank? %>
+              <img class="card-img-top h-img" src="<%= nutrition.image %>" alt="Card image cap">
+            <% else %>
+              <%= image_tag("placeholder_fest.jpeg", class: "card-img-top h-img") %>
+            <% end %>
+          </div>
+          <div class="card-body">
+            <h5 class="h-card-title" style="color:#09083a;"><%= nutrition.name %></h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  <% end %>
+</div>

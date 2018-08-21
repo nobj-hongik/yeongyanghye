@@ -11,6 +11,7 @@ gem 'fog-aws'
 gem 'devise'
 gem 'bootstrap_form'
 gem 'bootstrap', '~> 4.1.1'
+gem "font-awesome-rails"
 gem 'omniauth'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.6'

@@ -1,29 +1,48 @@
-<div class="container" style="margin-top:4rem;">
+<div class="container infobody">
+  <div style="text-align:center;">
+    <img src="http://img1.smdutyfree.com/upload/adm/sp/119925/2560001083801/2560001083801_SS_2_1465450498657.png" alt="Card image cap">
+  </div>
   <p>
-    <strong>Name:</strong>
+    <strong>제품명:</strong>
     <%= @nutrition.name %>
   </p>
-  
   <p>
-    <strong>Brand:</strong>
-    <%= @nutrition.brand %>
+    <strong>회사명:</strong>
+    <%= @nutrition.company %>
   </p>
-  
   <p>
-    <strong>Character:</strong>
-    <%= @nutrition.character %>
-  </p>
-  
+    <strong>섭취법:</strong>
+    <%= @nutrition.howtext %>
+  </p>  
   <p>
-    <strong>Function:</strong>
+    <strong>기능:</strong>
     <%= @nutrition.function %>
   </p>
-  
   <p>
-    <strong>Precaution:</strong>
-    <%= @nutrition.precaution %>
+    <strong>주의사항:</strong>
+    <%= @nutrition.except %>
   </p>
-  
-  <%= link_to 'Edit', edit_nutrition_path(@nutrition) %> |
-  <%= link_to 'Delete', nutrition_path(@nutrition), method: "delete",:data => {:confirm => '진짜 지울래요?'} %>
 </div>
+<div style="text-align:center;">
+  <% if !@nutrition.followed_by?(current_user)%>
+      <%=link_to '내몸에 담기',nutri_follow_nutritions_path(@nutrition), method: :post %>
+  <% else %>
+      <%=link_to '내몸에서 빼기',nutri_follow_nutritions_path(@nutrition), method: :post %>
+  <% end %>
+</div>
+
+<section class="magazine_mainsection" style="background-color: #ff7f0f;height:30vh;
+        width:100%;
+        background-position: center;
+        background-size: cover; text-align:center;margin-top:3rem;">
+    <p class="nutrishow_sectionword"style="color:white;">부정확한 정보는 알려주세요! </p>
+    <%= link_to '수정요청', '#', {style: "border: 2px solid white;color:white;",class: ""} %>
+</section>
+
+
+<style>
+.infobody{
+  margin-top:2rem;
+  border: 2px solid orange;
+}
+</style>

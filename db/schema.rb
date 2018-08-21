@@ -177,7 +177,7 @@ ActiveRecord::Schema.define(version: 20180821030115) do
     t.datetime "updated_at",                null: false
   end
 
-  create_table "nutritions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "nutritions", force: :cascade, options: "ENGINE=MyISAM DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.text     "company",     limit: 65535
     t.string   "shape"
