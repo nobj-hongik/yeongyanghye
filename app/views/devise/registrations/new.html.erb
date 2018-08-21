@@ -8,26 +8,27 @@ var con=confirm("가입 이메일이 해당 이메일로 전송 되었습니다.
 </head> 
 
 <section class="regislation-pg" style="background-image: url(/assets/YYH_main.jpg);">
-<div class="wrapperrn" id="wrapperrn">
+ <div class="wrapperrn" id="wrapperrn">
   <div class="row">
     <div class="col-12 col-md-3 col-lg-4"></div>
        <div class="col-12 col-md-6 col-lg-4">
          <br> 
            <div class="container">
-             <div class="card opacity" style="margin-top:200px;">
-                <div class="card-body"> 
+             <div class="card opacity" style="margin-top:100px;">
+                <div class="card-body y-card" > 
                   <div class="center-btn">
-                    <h2>Sign Up</h2>
+                    <div class="login-logo">Sign Up</div>
                   </div>
                   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                   <%= devise_error_messages! %>
                    <p class="text-center" style="font-size:14px">사용자 인증을 위하여 간단한 회원 정보만 받습니다. <br>이메일을 잘 기억해 주세요!</p>
                               <br>
-                   <div class="form-group">
+                   <div class="y-email">
                      <%= f.label :email %><br/>
                      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                    </div>
-                   <div class="form-group">
+                   
+                   <div class="y-password">
                      <%= f.label :password %>
                      <% if @minimum_password_length %>
                      <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -35,7 +36,7 @@ var con=confirm("가입 이메일이 해당 이메일로 전송 되었습니다.
                      <%= f.password_field :password, autocomplete: "off" %>
                     
                    </div> 
-                    <div class="form-group">
+                    <div class="y-password_confirmation">
                                 <%= f.label :password_confirmation,"비밀번호 확인",class: "control-label" %><br />
                                 <%= f.password_field :password_confirmation, autocomplete: "off" , class: "form-control", id: "password_2_input"%>
                                 
@@ -77,11 +78,11 @@ var con=confirm("가입 이메일이 해당 이메일로 전송 되었습니다.
                             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                               
                               <div class="form-group">
-                                <%= f.label :name ,"이 름",class: "control-label"%><br />
+                                <%= f.label :name ,"이 름",class: "control-label "%><br/>
                                 <%= f.text_field :name, autofocus: true, class: "form-control", id: "name_input", :required => true %>
                               </div>
                               <div class="form-group">
-                                <%= f.label :email ,"이메일",class: "control-label"%><br />
+                                <%= f.label :email ,"이메일", class: "control-label" %><br />
                                 <%= f.email_field :email, autofocus: true, class: "form-control", id: "email_input" %>
                               </div>
                               <div class="form-group">
@@ -93,7 +94,7 @@ var con=confirm("가입 이메일이 해당 이메일로 전송 되었습니다.
                               </div>
                               <div class="form-group">
                                 <%= f.label :password_confirmation,"비밀번호 확인",class: "control-label" %><br />
-                                <%= f.password_field :password_confirmation, autocomplete: "off" , class: "form-control", id: "password_2_input"%>
+                                <%= f.password_field :password_confirmation, autocomplete: "off" , class: "form-control", id: "password_input"%>
                               </div>
                                 <br>
                               <div class="actions">
@@ -117,6 +118,30 @@ var con=confirm("가입 이메일이 해당 이메일로 전송 되었습니다.
 </div>-->
 
 <style>
+.y-email{
+  margin-bottom: 14px;
+  
+}
+
+.card-body.y-card{
+  height: 75vh;
+}
+
+{
+  
+}
+.center-btn{
+  margin: 0 auto;
+}
+
+.text-center{
+  margin-top: 18px;
+}
+
+.form-group{
+  margin-bottom: 0.5rem;
+  
+}
 
 .opacity {
   opacity: 0.85;
@@ -134,13 +159,16 @@ var con=confirm("가입 이메일이 해당 이메일로 전송 되었습니다.
 }
 
 .btn-primary{
-    background-color:#585a5e;
-    border: 0.3px solid black;
+    width: 100%;
+    background-color:#FFFFFF;
+    border: 2px solid orange;
+    color: orange;
+    margin-top: 0.2px;
 }
 .btn-primary:hover {
     color: #fff;
-    background-color: black;
-    border-color: black;
+    background-color: orange;
+    border-color: orange;
 }
 .centerer{
   display: block;
@@ -162,4 +190,17 @@ var con=confirm("가입 이메일이 해당 이메일로 전송 되었습니다.
 .wrapperrn{
   
 }
+
+.login-logo{
+  text-align: center;
+}
+.imgsizer3 {
+    padding-top: 20px;
+    width: 500px;
+    padding-bottom: 0px;
+    
+    
+    
+
+
 </style>

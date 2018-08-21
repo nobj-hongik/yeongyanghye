@@ -78,14 +78,22 @@ class NutritionsController < ApplicationController
       # @computer = ' +' + params[:imuen] + '*'
       
       make_params_ary
+      
       if params[:except]
         @except = '%' + params[:except] + '%'
       elsif
         @except = "쓰레기값"
       end
-      @nutritions = Nutrition.find_by_sql(["SELECT * FROM nutritions WHERE MATCH (function, shape, companyinfo) AGAINST ( ? IN BOOLEAN MODE)
-                                   AND except NOT LIKE  ? ", @funcwords, @except])
       
+      if params[:mfds] == '인증'
+        @mfds = params[:mfds]
+        @nutritions = Nutrition.find_by_sql(["SELECT * FROM nutritions WHERE MATCH (function, shape, companyinfo) AGAINST ( ? IN BOOLEAN MODE)
+                                   AND except NOT LIKE  ? AND mfds = ? ", @funcwords, @except, @mfds])      
+      else
+        @nutritions = Nutrition.find_by_sql(["SELECT * FROM nutritions WHERE MATCH (function, shape, companyinfo) AGAINST ( ? IN BOOLEAN MODE)
+                                   AND except NOT LIKE  ? ", @funcwords, @except])        
+      end
+
       # @nutritions = nutrition.find(:all, :id => ["SELECT id FROM unutritions WHERE match(title,content) against(+%?% IN BOOLEAN MODE)",@search])
       # @nutritions = nutrition.where(:title => @search).order("created_at DESC")
     else
@@ -119,10 +127,5 @@ class NutritionsController < ApplicationController
         end
       end
       
-      for t in 0..1
-        if params[:companyinfo]
-          @funcwords = @funcwords + ' +' + params[:companyinfo][t] + '*' if params[:companyinfo][t]
-        end
-      end
     end    
 end

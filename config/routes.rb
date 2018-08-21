@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'register/info1'
 
-  get 'register/info2'
   
   get 'auth/:provider/callback', to: 'users#create'
   get 'auth/failure', to: redirect('/')
@@ -23,7 +21,7 @@ Rails.application.routes.draw do
   root 'home#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, :controllers => { registration: 'registrations', omniauth_callbacks: 'callbacks' }
+  devise_for :users, :controllers => { registration: 'registrations', omniauth_callbacks: 'user/omniauth_callbacks' }
 
   resources :nutritions do
     collection do

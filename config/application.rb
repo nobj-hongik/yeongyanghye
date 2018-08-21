@@ -26,7 +26,8 @@ module Workspace
     config.active_record.raise_in_transactional_callbacks = true
   end
 end  
-  module CalendarExample #calendar
+
+module CalendarExample #calendar
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/lib)
     # Settings in config/environments/* take precedence over those specified here.

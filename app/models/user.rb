@@ -111,6 +111,7 @@ class User < ActiveRecord::Base
         end
       end
     end
+  
 
     if identity.user != user
       identity.user = user
