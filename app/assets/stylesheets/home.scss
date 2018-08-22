@@ -15,6 +15,16 @@
         font-size:1.3rem;
         padding-top:5rem;
     }
+    .lg_div{
+      width:100%;
+      height:200px;
+    }
+    .no-pr{
+
+    }
+    .no-pl{
+
+    }
 }
 @media (min-width: 768px) {
     .mainsection{
@@ -28,6 +38,16 @@
         color:white;
         font-size:2rem;
         padding-top:10rem;
+    }
+    .lg_div{
+      width:100%;
+      height:400px;
+    }
+    .no-pr{
+      padding-right: 0px!important;
+    }
+    .no-pl{
+      padding-left: 0px!important;
     }
 }
 
@@ -176,7 +196,7 @@
   background-repeat:no-repeat;
   background-position:  center;
   background-size: cover;
-  
+
 }
 
 .intro-sub-desc{
@@ -234,16 +254,16 @@
   }
 
   #navigation-wrapper {
-    margin: 0 auto;
-    width: 80vw;
-    min-width: 768px;
     background-color: #fff;
     height: auto;
     overflow-x: hidden;
+    margin-bottom:30px;
   }
 
   .menu {
-    width: calc(100% / 9);
+    font-weight:300;
+    letter-spacing: 0.1em;
+    width: calc(100% / 7);
     display: inline-block;
     text-align: center;
   }
@@ -260,14 +280,13 @@
 
 .magazine-wrapper{
   width: 100%;
-  height: 80vh;
 }
 
 .magazine{
-  margin: 0 auto;
-  width : 80vw;
-  height: 400px;
-  background-color: black;
+  background-color: white;
+}
+.height_fixer{
+  height:200px;
 }
 .a{
   width: 50%;
@@ -329,7 +348,7 @@
   background-repeat:no-repeat;
   background-position:  center;
   background-size: cover;
-  
+
 }
 
 
@@ -358,7 +377,7 @@
 
 // /* Subnav button */
 // .subnav .subnavbtn {
-//   font-size: 16px; 
+//   font-size: 16px;
 //   border: none;
 //   outline: none;
 //   color: white;
@@ -411,14 +430,14 @@
     display: inline-block;
     float: left;
 }
-  
+
 .nav-btn{
     /* width:calc(100% / 7 - 10px); */
     display: inline-block;
-    padding-left: 40px; 
+    padding-left: 40px;
     /* min-width: 140px */
 }
-  
+
 .nav-text{
     color: #FFFFFF;
 }
@@ -430,7 +449,7 @@
     margin-left: 50px;
     margin-right: 50px;
 }
-  
+
 .main-nav-text{
     padding-left: 10%;
     padding-right: 10%;
@@ -438,5 +457,9 @@
 
 .fsize14 {
     font-size: 14px;
-}  
+}
 // nav수정중
+
+.mag_cover_img{
+  position:relative;
+}

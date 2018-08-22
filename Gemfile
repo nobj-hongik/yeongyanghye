@@ -4,6 +4,7 @@ gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 gem 'omniauth-kakao', :git => 'git://github.com/hcn1519/omniauth-kakao'
 gem 'mysql2', '< 0.5'
+gem 'sqlite3', :group => :development
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'

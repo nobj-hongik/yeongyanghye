@@ -84,15 +84,17 @@
     <div class="magazine-title">
       <span class="title-text">MAGAZINE</span>
     </div>
-    <div class=“sub-nav”>
-      <div id="navigation-wrapper">
-        <% Magazine::CATEGORY.each do |k,v| %>
-          <%= link_to magazine_ajax_path(v), :remote => true do %>
-            <div id="menu-1" class="menu">
-              <span><%= k %></span>
-            </div>
+    <div class="container">
+      <div class="sub_nav text-center">
+        <div id="navigation-wrapper">
+          <% Magazine::CATEGORY.each do |k,v| %>
+            <%= link_to magazine_ajax_path(v), :remote => true do %>
+              <div id="menu-1" class="menu">
+                <span><%= k %></span>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
     <div id="ajaxrender">
@@ -106,4 +108,3 @@
 
 <footer class="footer">
 </footer>
-
