@@ -1,7 +1,4 @@
-<!--<section class="mainsection" style="background-image: url(/assets/mainimg2.jpg);">
-    <!--<%= image_tag "mainimg.jpg", class: "mainimg" %>-->
-    <!--<p class="sectionword">세상에 하나밖에 없는</br> 당신만을 위한 맞춤형 영양 추천 서비스 </p>
-</section>-->
+
 
 
 <body>
@@ -96,19 +93,8 @@
         <% end %>
       </div>
     </div>
-
-<div class="magazine-wrapper">
-  <div class="magazine">
-    <div class='a'></div>
-    <div class='b'>
-      <div class='d'></div>
-      <div class='e'>
-        <div class='f'></div>
-        <div class='g'></div>
-        <div class='h'></div>
-      </div>
-    </div>
-    <div class='c'></div>
+  <div id="ajaxrender">
+    <%= render partial: 'magazines/magazine_wrapper' %>
   </div>
 </section>
 <section class="banner">

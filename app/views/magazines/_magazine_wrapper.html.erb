@@ -3,20 +3,24 @@
     <div class="row">
       <div class="col-12 col-md-6 no-pr">
         <div class="mag_div lg_div" style="<%= show_m1_bg %>">
+          <p class="m1_deco text-center"><%= @m1.present? ? @m1.title : "-" %></p>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="row">
           <div class="col-6 no-pr no-pl no-pr-strong">
             <div class="mag_div sm_div" style="<%= show_m2_bg %>">
+              <p class="m2_deco"><%= @m2.present? ? @m2.title : "-" %></p>
             </div>
           </div>
           <div class="col-6 col-md-6 no-pl no-pl-strong">
             <div class="mag_div sm_div" style="<%= show_m3_bg %>">
+              <p class="m3_deco"><%= @m3.present? ? @m3.title : "-" %></p>
             </div>
           </div>
           <div class="col-12 col-md-12 no-pl">
             <div class="mag_div sm_div" style="<%= show_m4_bg %>">
+              <p class="m4_deco"><%= @m4.present? ? @m4.title : "-" %></p>
             </div>
           </div>
         </div>
@@ -24,50 +28,3 @@
     </div>
   </div>
 </div>
-
-<style>
-.no_padding{
-  padding-right:1px;
-  padding-left:1px;
-}
-.mag_title{
-  color:white;
-}
-.big_div{
-  height:400px;
-}
-.small_div{
-  height:200px;
-}
-.div_big{
-  height:200px;
-}
-.div_sm{
-  height:100px;
-}
-.sm_div{
-  height:200px;
-}
-.pos_ch{
-  right:15px;
-}
-.no-pr-strong{
-  padding-right:0px;
-}
-.no-pl-strong{
-  padding-left:0px;
-}
-.mag_div{
-  background-size: cover;
-  background-repeat: none;
-  background-position: center;
-  min-height: 80%;
-  position: relative;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  -webkit-perspective: 250px;
-  -o-perspective: 250px;
-  perspective: 250px;
-  margin-bottom:0px;
-}
-</style>
