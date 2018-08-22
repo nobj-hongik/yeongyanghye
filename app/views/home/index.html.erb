@@ -5,36 +5,35 @@
 
 
 <body>
+  <!--<nav class="main-nav">-->
+  <!--    <div class="logo">-->
+  <!--    </div>-->
+  <!--    <div class="main-nav-text">-->
+  <!--      <div class="nav-btn">-->
+  <!--        <span class="nav-text">맞춤형 영양제 찾기</span>-->
+  <!--      </div>-->
+  <!--      <div class="nav-btn">-->
+  <!--        <span class="nav-text">멘토 커뮤니티</span>-->
+  <!--      </div>-->
+  <!--      <div class="nav-btn">-->
+  <!--        <span class="nav-text">와글와글</span>-->
+  <!--      </div>-->
+  <!--      <div class="nav-btn">-->
+  <!--        <span class="nav-text">회원가입하기</span>-->
+  <!--      </div>-->
+  <!--      <div class="nav-btn">-->
+  <!--        <span class="nav-text">마이페이지</span>-->
+  <!--      </div>-->
+  <!--      <div class="nav-btn">-->
+  <!--        <span class="nav-text">로그인</span>-->
+  <!--      </div>-->
+  <!--      <div class="nav-btn">-->
+  <!--        <span class="nav-text">멘토 신청하기</span>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </nav>-->
 <div class="index-pg">
   <section class="index" style="background-image: url(/assets/YYH_main.jpg);">
-
-     <!--<nav class="main-nav">
-      <div class="logo">
-      </div>
-        <div class="main-nav-text">
-          <div class="nav-btn">
-            <span class="nav-text">맞춤형 영양제 찾기</span>
-          </div>
-          <div class="nav-btn">
-            <span class="nav-text">멘토 커뮤니티</span>
-          </div>
-          <div class="nav-btn">
-            <span class="nav-text">와글와글</span>
-          </div>
-          <div class="nav-btn">
-            <span class="nav-text">회원가입하기</span>
-          </div>
-          <div class="nav-btn">
-            <span class="nav-text">마이페이지</span>
-          </div>
-          <div class="nav-btn">
-            <span class="nav-text">로그인</span>
-          </div>
-          <div class="nav-btn">
-            <span class="nav-text">멘토 신청하기</span>
-          </div>
-        </div>
-      </nav>-->
     <div class="main-index">
       <div class="main-logo" style="background-image: url(/assets/main_logo.jpg);" ></div>
       <div class="main-logo-text">영양해</div>
@@ -81,26 +80,37 @@
     </div>
   </section>
   <section class="magazine-index" >
-    <div class="magazine-title">
-      <span class="title-text">MAGAZINE</span>
-    </div>
-    <div class="container">
-      <div class="sub_nav text-center">
-        <div id="navigation-wrapper">
-          <% Magazine::CATEGORY.each do |k,v| %>
-            <%= link_to magazine_ajax_path(v), :remote => true do %>
-              <div id="menu-1" class="menu">
-                <span><%= k %></span>
-              </div>
-            <% end %>
+  <div class="magazine-title">
+    <span class="title-text">MAGAZINE</span>
+  </div>
+
+  <div class="container">
+    <div class="sub_nav text-center">
+      <div id="navigation-wrapper">
+        <% Magazine::CATEGORY.each do |k,v| %>
+          <%= link_to magazine_ajax_path(v), :remote => true do %>
+            <div id="menu-1" class="menu">
+              <span><%= k %></span>
+            </div>
           <% end %>
-        </div>
+        <% end %>
       </div>
     </div>
-    <div id="ajaxrender">
-      <%= render partial: 'magazines/magazine_wrapper' %>
+
+<div class="magazine-wrapper">
+  <div class="magazine">
+    <div class='a'></div>
+    <div class='b'>
+      <div class='d'></div>
+      <div class='e'>
+        <div class='f'></div>
+        <div class='g'></div>
+        <div class='h'></div>
+      </div>
     </div>
-  </section>
+    <div class='c'></div>
+  </div>
+</section>
 <section class="banner">
 
 </section>

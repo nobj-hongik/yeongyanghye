@@ -26,7 +26,7 @@ class Devise::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @identity.provider == "kakao"
         register_info2_path
       else
-        register_info1_path
+        after_sign_in_path_for
       end
     else
       visitor_main_path
