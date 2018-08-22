@@ -1,7 +1,7 @@
 <div class="row">
 <div class="col-xs-0 col-md-1 col-xl-3"></div>    
 
-<div class="motherdiv col-xs-0 col-md-1 col-xl-5">
+<div class="motherdiv col-xs-12 col-md-1 col-xl-5">
   <%= form_tag(result_nutritions_path, method: "get") do %>
   
     
@@ -153,7 +153,7 @@
       <p>주의사항</p> <div id='exceptdiv'> </div>
       <p>기업분류</p> <div id='cominfodiv'> </div>
     </div>
-    <button type ="submit" value="submit" class="nutritionform">조회하기</button>
+    <%=submit_tag "추천받기", class: "nutritionform" %>
     <% end %>
   </div>
 </div>   

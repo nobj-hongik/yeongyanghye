@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   get 'signout', to: 'users#destroy', as: 'signout'
 
 
+CalendarExample::Application.routes.draw do
+  get 'calendar/show'
 
+  resources :events
+  resource :calendar, only: [:show], controller: :calendar
+end
   resources :mypages
   resources :aftersignup
   resources :events, only: [:create] do
