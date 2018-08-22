@@ -50,7 +50,36 @@ input[class="magazine_checkboxinput"] + label {
     border-radius: 2px;
 }
 input[class="magazine_checkboxinput"]:checked + label {
-    border-color :orange;
+    border-color: orange;
     color: orange;
     font-weight: bold;
 }    
+
+.carousel-inner{
+    text-align: left;
+    color: black;
+    font-weight: bold;
+}
+
+.carousel-caption d-block{
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    
+}
+
+.btn-default{
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+}
+
+h1{
+    text-align: center;
+    color: black;
+}
+
+h2{
+    text-align: left;
+    color: black;
+}

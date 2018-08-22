@@ -1,13 +1,26 @@
-<div class="container">
+<section class="index" style="margin-bottom:4rem; background-image: url(/assets/YYH_main.jpg);">
+<div class="main-index">
+  <div class="main-logo-text">마이페이지</div>
+</div>
+<div style="padding-bottom:3rem;" class="index-text">
+  <span>꾸준히 영양하세요! </br> 기록하세요!</span>
+</div>
 <% if current_user.events.where(eventime: Date.today).blank? %>
   <%= form_for Event.new do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :eventime, value: Date.today %>
-  <button type="submit" class="btn btn-secondary" id="marketenroll">출석하기!</button>
-  <% end %>
+  <%=f.submit "출첵하기", class: "diarycheck" %>
+<% end %>
 <% else %>       
   <%= "이미 출첵했어요"%>
 <% end %>
+</section>
+
+
+<div class="container">
+
+<br>
+<a href = "/calendar/show">달력보기</a>
 <hr>
 <h2>좋아요한 메거진</h2>
 <div class="row">

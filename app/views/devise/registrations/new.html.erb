@@ -19,29 +19,36 @@ var con=confirm("가입 이메일이 해당 이메일로 전송 되었습니다.
                   <div class="center-btn">
                     <div class="login-logo">Sign Up</div>
                   </div>
-                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                  <%= devise_error_messages! %>
-                   <p class="text-center" style="font-size:14px">사용자 인증을 위하여 간단한 회원 정보만 받습니다. <br>이메일을 잘 기억해 주세요!</p>
-                              <br>
-                   <div class="y-email">
-                     <%= f.label :email %><br/>
-                     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-                   </div>
-                   
-                   <div class="y-password">
-                     <%= f.label :password %>
-                     <% if @minimum_password_length %>
-                     <em>(<%= @minimum_password_length %> characters minimum)</em>
-                     <% end %><br />
-                     <%= f.password_field :password, autocomplete: "off" %>
-                    
-                   </div> 
-                    <div class="y-password_confirmation">
-                                <%= f.label :password_confirmation,"비밀번호 확인",class: "control-label" %><br />
-                                <%= f.password_field :password_confirmation, autocomplete: "off" , class: "form-control", id: "password_2_input"%>
-                                
-                                 <%= f.submit "가입하기", class: "btn btn-primary", :onClick=>"empty()" %>
-                     <%end%>
+                  <h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
                     </div>
                   <br>
                   <%= render "devise/shared/links" %>
@@ -163,7 +170,7 @@ var con=confirm("가입 이메일이 해당 이메일로 전송 되었습니다.
     background-color:#FFFFFF;
     border: 2px solid orange;
     color: orange;
-    margin-top: 0.2px;
+    margin-top: 0.5rem;
 }
 .btn-primary:hover {
     color: #fff;

@@ -16,6 +16,7 @@
         padding-top:5rem;
     }
     .lg_div{
+      padding-top:80px;
       width:100%;
       height:200px;
     }
@@ -40,6 +41,7 @@
         padding-top:10rem;
     }
     .lg_div{
+      padding-top:170px;
       width:100%;
       height:400px;
     }
@@ -51,15 +53,7 @@
     }
 }
 
-.index {
-   width: 100%;
-   height: 85vh;
-   text-align: center;
-   background-repeat:no-repeat;
-   background-position:  center;
-  background-size: cover;
-}
-
+ 
 .magazine-index{
   width: 100%;
    height: 85vh;
@@ -167,6 +161,7 @@
   font-weight: 700;
   display: inline-block;
   color: #FFFFFF;
+  margin-bottom: 3rem;
 }
 
 .intro{
@@ -427,58 +422,57 @@
 
 
 
+// 만들던 nav 관련코드 주석 일단 부트스트랩네브사용 
+// .logo{
+//     width: 50px;
+//     height: 50px;
+//     background-color: orange;
+//     display: inline-block;
+//     float: left;
+// }
 
-.logo{
-    width: 50px;
-    height: 50px;
-    background-color: orange;
-    display: inline-block;
-    float: left;
-}
+// .nav-btn{
+//     /* width:calc(100% / 7 - 10px); */
+//     display: inline-block;
+//     padding-left: 40px;
+//     /* min-width: 140px */
+// }
 
-.nav-btn{
-    /* width:calc(100% / 7 - 10px); */
-    display: inline-block;
-    padding-left: 40px;
-    /* min-width: 140px */
-}
+// .nav-text{
+//     color: #FFFFFF;
+// }
 
-.nav-text{
-    color: #FFFFFF;
-}
+// .main-nav {
+//   height: 50px;
+//   background-color: rgba(0, 0, 0, 0.2);
+//   margin-top: 50px;
+//   margin-left: 50px;
+//   margin-right: 50px;
+// }
 
-.main-nav {
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.2);
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
+// .main-nav-text{
+//     padding-left: 10%;
+//     padding-right: 10%;
+// }
 
-.main-nav-text{
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-.fsize14 {
-    font-size: 14px;
-}
+// .fsize14 {
+//     font-size: 14px;
+// }
 // nav수정중
 
 .mag_cover_img{
   position:relative;
 }
 .navbar-custom{
-  background-color: #f7f7f7;
   padding:0 0 !important;
-  color: rgba(255, 255, 255,1) !important;
-  // position: fixed !important;
-  // top:2rem;
-  // left:25%;
+  background-color: rgba(170, 170, 170,0.6) !important;
+  border-radius:2px;
+  z-index:1;
 }
 #nav_logo{
   background-color: orange;
   margin-right:10rem;
+  border-radius:2px;
 }
 .navbar-custom2{
   opacity: 0.5;
@@ -490,4 +484,64 @@
   background-color: orange;
   color: white;
   transition: 0.4s;
+}
+
+.sm_div{
+  padding-top:80px;
+  height:200px;
+}
+.no-pr-strong{
+  padding-right:0px!important;
+}
+.no-pl-strong{
+  padding-left:0px!important;
+}
+.mag_div{
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
+  min-height: 80%;
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-perspective: 250px;
+  -o-perspective: 250px;
+  perspective: 250px;
+  margin-bottom:0px;
+}
+.m1_deco{
+  text-shadow: 1px 2px #6d6d6d;
+  color:white;
+  font-size:1.8rem;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+}
+.m2_deco{
+  text-shadow: 1px 2px #6d6d6d;
+  color:white;
+  font-size:1.2rem;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+}
+.m3_deco{
+  text-shadow: 1px 2px #6d6d6d;
+  color:white;
+  font-size:1.2rem;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+}
+.m4_deco{
+  text-shadow: 1px 2px #6d6d6d;
+  color:white;
+  font-size:1.2rem;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+}
+
+.index{
+  background-repeat:no-repeat;
+  background-position:  center;
+  background-size: cover;
+  text-align: center;
+  
 }
