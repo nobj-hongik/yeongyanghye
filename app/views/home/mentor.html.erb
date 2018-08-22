@@ -1,0 +1,43 @@
+<nav class="main-nav">
+      <div class="logo">
+      </div>
+      <div class="main-nav-text">
+        <div class="nav-btn">
+          <span class="nav-text">맞춤형 영양제 찾기</span>
+        </div>
+        <div style="position:relative;" class="nav-btn">
+          <span class="nav-text" id="magazine_mainnav" >메거진</span>
+            <div style="position:absolute; z-index: 1;top:3rem;left:-4.4rem;width:20rem;display: none;" class="" id="magazine_subnav">
+                <a style="display: inline-block; width:30%;" class="dropdown-item" href="/magazines">영양정보</a>
+                <a style="display: inline-block; width:30%;" href="/home/mentor">멘토진 소개</a>
+            </div>
+        </div>
+        <div style="position:relative;" class="nav-btn">
+            <span class="nav-text" id="wagle_mainnav">와글와글</span>
+            <div style="position:absolute; z-index: 1;top:3rem;left:-4.4rem;width:20rem;display: none;" class="" id="wagle_subnav">
+                <a style="display: inline-block; width:30%;" class="dropdown-item" href="/magazines">자유게시판</a>
+                <a style="display: inline-block; width:30%;" href="/home/mentor">영양 in</a>
+            </div>        
+        </div>
+        <div class="nav-btn">
+          <span class="nav-text">회원가입하기</span>
+        </div>
+        <div class="nav-btn">
+          <span class="nav-text">마이페이지</span>
+        </div>
+        <div class="nav-btn">
+          <span class="nav-text">로그인</span>
+        </div>
+        <div class="nav-btn">
+          <span class="nav-text">멘토 신청하기</span>
+        </div>
+      </div>
+    </nav>
+<script>
+$("#magazine_mainnav").clickToggle(function() {
+    $("#magazine_subnav").show();
+});
+$("#wagle_mainnav").click(function() {
+    $("#wagle_subnav").attr('style','position:absolute; z-index: 1;top:3rem;left:-4.4rem;width:20rem;display:inline-block;');
+});
+</script>    
