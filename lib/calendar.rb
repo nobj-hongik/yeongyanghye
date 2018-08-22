@@ -41,3 +41,9 @@ class Calendar < Struct.new(:view, :date, :callback)
       (first..last).to_a.in_groups_of(7)
     end
 end
+
+
+ 
+    def calendar(date = Date.today, &block)
+        Calendar.new(self, date, block).table
+    end
