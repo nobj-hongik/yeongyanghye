@@ -3,13 +3,15 @@ class FreesController < InheritedResources::Base
   before_action :is_owner?, only: [:edit, :update, :destroy]
   
   
-  private
+private
 
     def free_params
       params.require(:free).permit(:title, :content, :user_id)
     end
     
     def is_owner?
-        redirect_to @free unless current_user == @free.user
-    end      
+        @free = Free.find_by(id: params[:id])
+        redirect_to frees_path if @free.user_id != current_user.id
+    end
+    
 end

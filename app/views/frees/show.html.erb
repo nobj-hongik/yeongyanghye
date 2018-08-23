@@ -16,11 +16,11 @@
       <div class="freelike">
         <% if @free.freeliked_users.include?(current_user) %>
           <%= link_to free_freelikes_path(@free), method: "post" do %>
-            <i style="color:red;" class="fa fa-heart"></i>
+            <i style="color:#ffa500;" class="fa fa-heart"></i>
           <% end %>        
         <% else %>
           <%= link_to free_freelikes_path(@free), method: "post" do %>
-            <i class="fa fa-heart"> </i>
+            <i class="fa fa-heart-o"> </i>
           <% end %>
         <% end %>
       </div>

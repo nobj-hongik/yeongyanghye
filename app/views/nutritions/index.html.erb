@@ -18,12 +18,12 @@
             <label class="checkboxlabel" for="alcohol">술꾼</label>
           </li>
           <li>
-            <input type="checkbox" id="3" value="임산부" class="checkboxinput0" name="target[]">
-            <label class="checkboxlabel" for="3">임산부</label>
+            <input type="checkbox" id="dieter" value="다이어터" class="checkboxinput0" name="target[]">
+            <label class="checkboxlabel" for="dieter">다이어터</label>
           </li> 
           <li>
-            <input type="checkbox" value="운동인" id="4" class="checkboxinput0" name="target[]">
-            <label class="checkboxlabel" for="4">운동인</label>
+            <input type="checkbox" id="worker" value="직장인" class="checkboxinput0" name="target[]">
+            <label class="checkboxlabel" for="worker">직장인</label>
           </li>    
         </ul>
     
@@ -48,8 +48,8 @@
             <label class="checkboxlabel" for="func4">면역</label>
           </li>    
           <li>
-            <input type="checkbox" value="유산균" id="func5" class="checkboxinput1" name="func[]">
-            <label class="checkboxlabel" for="func5">유산균</label>
+            <input type="checkbox" value="뼈" id="func5" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func5">뼈</label>
           </li>
           <li>
             <input type="checkbox" value="체지방" id="func6" class="checkboxinput1" name="func[]">
@@ -58,8 +58,8 @@
         </ul>
         <ul>
           <li>
-            <input type="checkbox" id="func7" value="장" class="checkboxinput1" name="func[]">
-            <label class="checkboxlabel" for="func7" >장</label>
+            <input type="checkbox" id="func7" value="대사" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func7" >대사</label>
           </li>
           <li>
             <input type="checkbox" id="func8" value="눈" class="checkboxinput1" name="func[]">
@@ -80,7 +80,15 @@
           <li>
             <input type="checkbox" value="혈압" id="func12" class="checkboxinput1" name="func[]">
             <label class="checkboxlabel" for="func12" >혈압</label>
-          </li>     
+          </li> 
+          <li>
+            <input type="checkbox" value="배변" id="func13" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func13" >장건강</label>
+          </li>
+          <li>
+            <input type="checkbox" value="근육" id="func14" class="checkboxinput1" name="func[]">
+            <label class="checkboxlabel" for="func14" >근육</label>
+          </li>
         </ul>
     
     <p class="commendcheck">어떤 형태의 영양제가 좋으신가요?!</p>
@@ -211,6 +219,134 @@ $("#student").click(function(){                  //수험생을 클릭했을때
               $('#' + test4).remove();              
             }            
         });
+        
+        
+$("#alcohol").click(function(){                  //술꾼을 클릭했을때
+            if($(this).is(":checked")) {
+              $("#func10").attr("checked", true);  //간건강
+              var test = $("#func10").val();
+              var ptag = $('<p class="renderedword" id="' +test+ '">' +test+ '</p>');
+              ptag.insertAfter("#funcdiv");
+              $("#func2").attr("checked", true);  //피로
+              var test2 = $("#func2").val();
+              var ptag2 = $('<p class="renderedword" id="' +test2+ '">' +test2+ '</p>');
+              ptag2.insertAfter("#funcdiv");
+              $("#func7").attr("checked", true);  //대사
+              var test3 = $("#func7").val();
+              var ptag3 = $('<p class="renderedword" id="' +test3+ '">' +test3+ '</p>');
+              ptag3.insertAfter("#funcdiv");
+              $("#func6").attr("checked", true);  //체지방
+              var test4 = $("#func6").val();
+              var ptag4 = $('<p class="renderedword" id="' +test4+ '">' +test4+ '</p>');
+              ptag4.insertAfter("#funcdiv");                
+            }
+            else{
+              $("#func10").attr("checked", false);  //간건강
+              var test = $("#func10").val();
+              $('#' + test).remove();
+              
+              $("#func2").attr("checked", false);  //피로
+              var test2 = $("#func2").val();
+              $('#' + test2).remove();
+              
+              $("#func7").attr("checked", false);  //대사
+              var test3 = $("#func7").val();
+              $('#' + test3).remove();              
+            
+              $("#func6").attr("checked", false);  //체지방
+              var test4 = $("#func6").val();
+              $('#' + test4).remove();              
+            }            
+        });
+        
+        
+$("#dieter").click(function(){                  //다이어터를 클릭했을때
+            if($(this).is(":checked")) {
+              $("#func13").attr("checked", true);  //배변
+              var test = $("#func13").val();
+              var ptag = $('<p class="renderedword" id="' +test+ '">' +test+ '</p>');
+              ptag.insertAfter("#funcdiv");
+              $("#func2").attr("checked", true);  //피로
+              var test2 = $("#func2").val();
+              var ptag2 = $('<p class="renderedword" id="' +test2+ '">' +test2+ '</p>');
+              ptag2.insertAfter("#funcdiv");
+              $("#func7").attr("checked", true);  //대사
+              var test3 = $("#func7").val();
+              var ptag3 = $('<p class="renderedword" id="' +test3+ '">' +test3+ '</p>');
+              ptag3.insertAfter("#funcdiv");
+              $("#func14").attr("checked", true);  //근육
+              var test4 = $("#func14").val();
+              var ptag4 = $('<p class="renderedword" id="' +test4+ '">' +test4+ '</p>');
+              ptag4.insertAfter("#funcdiv");
+              $("#func11").attr("checked", true);  //기억력
+              var test5 = $("#func11").val();
+              var ptag5 = $('<p class="renderedword" id="' +test5+ '">' +test5+ '</p>');
+              ptag5.insertAfter("#funcdiv"); 
+            }
+            else{
+              $("#func13").attr("checked", false);  //배변
+              var test = $("#func13").val();
+              $('#' + test).remove();
+              
+              $("#func2").attr("checked", false);  //피로
+              var test2 = $("#func2").val();
+              $('#' + test2).remove();
+              
+              $("#func7").attr("checked", false);  //대사
+              var test3 = $("#func7").val();
+              $('#' + test3).remove();              
+            
+              $("#func14").attr("checked", false);  //근육
+              var test4 = $("#func14").val();
+              $('#' + test4).remove();  
+              
+              $("#func11").attr("checked", false);  //기억력
+              var test5 = $("#func11").val();
+              $('#' + test5).remove(); 
+              
+            }            
+        });
+        
+        
+$("#worker").click(function(){                  //직장인을 클릭했을때
+            if($(this).is(":checked")) {
+              $("#func8").attr("checked", true);  //눈건강
+              var test = $("#func8").val();
+              var ptag = $('<p class="renderedword" id="' +test+ '">' +test+ '</p>');
+              ptag.insertAfter("#funcdiv");
+              $("#func2").attr("checked", true);  //피로
+              var test2 = $("#func2").val();
+              var ptag2 = $('<p class="renderedword" id="' +test2+ '">' +test2+ '</p>');
+              ptag2.insertAfter("#funcdiv");
+              $("#func10").attr("checked", true);  //간건강
+              var test3 = $("#func10").val();
+              var ptag3 = $('<p class="renderedword" id="' +test3+ '">' +test3+ '</p>');
+              ptag3.insertAfter("#funcdiv");
+              $("#func4").attr("checked", true);  //면역
+              var test4 = $("#func4").val();
+              var ptag4 = $('<p class="renderedword" id="' +test4+ '">' +test4+ '</p>');
+              ptag4.insertAfter("#funcdiv");
+            }
+            else{
+              $("#func8").attr("checked", false);  //눈건강
+              var test = $("#func8").val();
+              $('#' + test).remove();
+              
+              $("#func2").attr("checked", false);  //피로
+              var test2 = $("#func2").val();
+              $('#' + test2).remove();
+              
+              $("#func10").attr("checked", false);  //간건강
+              var test3 = $("#func10").val();
+              $('#' + test3).remove();              
+            
+              $("#func4").attr("checked", false);  //면역
+              var test4 = $("#func4").val();
+              $('#' + test4).remove();  
+            }            
+        });
+        
+        
         
 $(".checkboxinput0").click(function() {
   if($(this).is(":checked")) {

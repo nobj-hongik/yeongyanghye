@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   root 'home#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" , :registrations=>'registrations'  }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" , :registrations =>'registrations'  }
   get 'home/mentor'
   get 'auth/:provider/callback', to: 'users#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'users#destroy', as: 'signout'
-
+  # get 'mypages/index'
 
 CalendarExample::Application.routes.draw do
   get 'calendar/show'

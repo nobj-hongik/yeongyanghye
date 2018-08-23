@@ -1,5 +1,4 @@
-
-
+<div class= "calendarnav">
 <div class="row">
   <div class="col-md-12 text-center">
     <div class="well controls">
@@ -13,8 +12,12 @@
     </div>
   </div>
 </div>
+</div>
+<div class = "calendarwrapper">
+
 <div class="row">
   <div class="col-md-12">
+    <div class="daywrapper">
     <%= calendar @date do |date| %>
       <%= date.day %> 
       
@@ -28,21 +31,32 @@
         
             <% end %>
 
-      <% end %>
+    <% end %>
 
     </ul> 
     <% end %>
-
+    </div>
   </div>
 </div>
-
-
-<div>
-  <% if user_signed_in? %>
-  <%= link_to "logout", destroy_user_session_path, method: :delete %>
-  <% else %>
-  <%= link_to "login", new_user_session_path, method: :get %>
-  <%= link_to "sign_up", new_user_registration_path, method: :get %>
-  <% end %>
-
 </div>
+<div style="text-align:center; margin-bottom:4rem;">
+  <%= link_to "/mypages", class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-backward">뒤로가기</i>
+  <% end %>
+</div>
+<style>
+.calendarwrapper{
+  margin-left: 5vh;
+  margin-top: 5vh;
+  margin-right: 5vh;
+  margin-bottom: 10vh;
+}
+.dayheightwidth{
+  height: 15vh;
+  width: 20vh;
+
+}
+.calendarnav{
+  margin-top: 3vh;
+}
+</style>
