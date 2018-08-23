@@ -50,7 +50,63 @@ input[class="magazine_checkboxinput"] + label {
     border-radius: 2px;
 }
 input[class="magazine_checkboxinput"]:checked + label {
-    border-color :orange;
+    border-color: orange;
     color: orange;
     font-weight: bold;
 }    
+
+.carousel-inner{
+    text-align: left;
+    color: black;
+    font-weight: bold;
+}
+
+.carousel-caption d-block{
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    
+}
+
+.btn-default{
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+}
+
+.y-mag-subtitle-1{
+    text-align: center;
+    
+}
+
+.y-weekly{
+    text-align: center;
+    color: black;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 28px;
+    font-weight: 200;
+    color: #f78429;
+}
+
+.y-carousel-title{
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 42px;
+    
+    
+}
+.carousel-item{
+    height:60vh;
+    
+}
+.d-block.w-100{
+    background-repeat:no-repeat;
+    text-align:  center;
+    vertical-align : middle;
+    overflow: hidden;
+}
+
+.y-mag-subtitle-1{
+    background-color: #f78429;
+}

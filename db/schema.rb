@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180821150150) do
+ActiveRecord::Schema.define(version: 20180823090450) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -190,11 +190,12 @@ ActiveRecord::Schema.define(version: 20180821150150) do
     t.string   "certifi"
     t.string   "contury"
     t.string   "price"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "user"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "mfds"
-    t.index ["user_id"], name: "index_nutritions_on_user_id"
+    t.text     "ingredienttext"
+    t.index ["user"], name: "index_nutritions_on_user"
   end
 
   create_table "question_comments", force: :cascade do |t|

@@ -20,7 +20,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new(event_params)
-    @event.eventime = Date.today
+    @event.eventime = Time.zone.now.to_date 
     @event.user_id = current_user.id
     @event.save
   end
