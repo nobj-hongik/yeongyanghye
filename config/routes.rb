@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'users#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'users#destroy', as: 'signout'
-
+  # get 'mypages/index'
 
 CalendarExample::Application.routes.draw do
   get 'calendar/show'

@@ -5,8 +5,8 @@
   <title>영양제 1차 검색!</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <!--<%#= stylesheet_link_tag "https://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>-->
-  <!--<%#= javascript_include_tag "https://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>-->
+  <%#= stylesheet_link_tag "https://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
+  <%#= javascript_include_tag "https://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
   <%= csrf_meta_tags %>  
 </head> 
 <body>
@@ -56,6 +56,38 @@
     </ul>
   </div>
 </nav>
+<!--<nav class="main-nav">
+      <div class="logo">
+      </div>
+        <div class="main-nav-text fsize14">
+          <div class="nav-btn subnav">
+          <span class="nav-text">맞춤형 영양제 찾기</span>
+            <button class="subnavbtn">맞춤형 영양제 찾기</button>
+            <div class="subnav-content">
+                        <a href="#magazine">영양제 찾기</a>
+                        <a href="mentor">마이페이지</a>
+                    </div>
+          </div>
+          <div class="nav-btn">
+            <span class="nav-text">멘토 커뮤니티</span>
+          </div>
+          <div class="nav-btn">
+            <span class="nav-text">와글와글</span>
+          </div>
+          <div class="nav-btn">
+            <span class="nav-text">회원가입하기</span>
+          </div>
+          <div class="nav-btn">
+            <span class="nav-text">마이페이지</span>
+          </div>
+          <div class="nav-btn">
+            <span class="nav-text">로그인</span>
+          </div>
+          <div class="nav-btn">
+            <span class="nav-text">멘토 신청하기</span>
+          </div>
+        </div>
+      </nav>-->
 <%= yield %>
 </body>
 </html>

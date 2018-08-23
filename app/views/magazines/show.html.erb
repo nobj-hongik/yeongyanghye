@@ -1,6 +1,6 @@
-<div class="magazine_container">
+<div class="container magazine_container">
 
-  <p id="notice"><%= notice %></p>
+  
   
   <p>
     <div class="magazine_header">
@@ -11,17 +11,21 @@
     <div class="magazine_title">
     <%= @magazine.title %>
     </div>
-    </div>
-    <% if @magazine.l_users.include?(current_user) %>
-      <%= link_to "좋아요 취소", magazine_magazinelikes_path(@magazine), method: "post" %>
-  <% else %>
-      <%= link_to "좋아요", magazine_magazinelikes_path(@magazine), method: "post" %>
-  <% end %>
-  <p>
-    <%= @magazine.magazinelikes.count %> 명이 좋아합니다.
-  </p>
-  </p>
+    
   
+  </p>
+
+  <div class="magazine_header_likes">
+  <p>
+  <% if @magazine.magazinelikes.present? %>
+    <%= @magazine.magazinelikes.count %> 명이 좋아합니다.
+  <%end%>
+  </p>
+  </div>
+  
+  </div>
+    
+    
   <p>
     <img class='magazine_image' src="<%= @magazine.image %>">
   </p>
@@ -31,34 +35,38 @@
   <p>
     <div class="magazine_content">
 
-    <strong>Content:</strong>
     <%= @magazine.content %>
     </div>
   </p>
   
-  <p>
-    <strong>Category:</strong>
-    <%= @magazine.category %>
-  </p>
   
   
   
-  
+  <div class="magazine_bottomlike">
+
   <% if @magazine.l_users.include?(current_user) %>
-      <%= link_to "좋아요 취소", magazine_magazinelikes_path(@magazine), method: "post" %>
-  <% else %>
-      <%= link_to "좋아요", magazine_magazinelikes_path(@magazine), method: "post" %>
-  <% end %>
+      <%= link_to  magazine_magazinelikes_path(@magazine), method: "post" do %>
+                  <i style="color:#ffa500;" class="fa fa-heart"></i>
+      <%end%>
+    <% else %>
+      <%= link_to magazine_magazinelikes_path(@magazine), method: "post" do %>
+                  <i class="fa fa-heart-o"> </i>
+      <%end%>
+    <% end %>
   <p>
-    <%= @magazine.magazinelikes.count %> 명이 좋아합니다.
+    <%= @magazine.magazinelikes.count %> 
   </p>
   
-  <%= link_to 'Edit', edit_magazine_path(@magazine) %> |
-  <%= link_to 'Back', magazines_path %>
+  
     
 </div>
-
+<div class="magazine_edit">
+<%= link_to 'Edit', edit_magazine_path(@magazine) %> |
+  <%= link_to 'Back', magazines_path %>
+</div>
 </hr>
+
+<div class="magazine_createcomment">
 <% if user_signed_in? %>
   <%= form_tag magazine_magazine_comments_path(@magazine) do %>
     <div class="form-group" style="padding-bottom:10px;">
@@ -71,26 +79,60 @@
     </div>
   <% end %>
 <% end %>
+</div>
 </hr>
-<% if @magazine.magazine_comments.present? %>
-      <ul class="collection">
-      <% @magazine.magazine_comments.each do |comment| %>
-        <li class="collection-item">
-          <span class="title"><%= comment.user.id %></span>
-          <p class="pre-line"><%= comment.content %></p>
-          <% if comment.user.id == current_user.id %>
-            <div><%= link_to "삭제", magazine_magazine_comment_path(@magazine, comment), method: "delete" %></div>
-          <% end %>
-        </li>
-      <% end %>
-      </ul>
-<% end %>
+
+<div style="margin-top:4rem;" class="fcomment_show">
+  <% if @magazine.magazine_comments.present? %>
+    <% @magazine.magazine_comments.each do |comment| %>
+      <div class="comment_cool">
+        <div class="row">
+          <div class="col-12">
+            <span class="luxury_space semi_bold-font"><%= comment.user.email %></span>
+            <p class="com_content"><%= comment.content %></p>
+            <% if !user_signed_in? %>
+            <%else%>
+              <% if comment.user.id == current_user.id %>
+              <%= form_tag magazine_magazine_comments_path(@magazine) do %>
+              <div class="form-group" style="padding-bottom:10px;">
+              </div>
+                <%= link_to "삭제", magazine_magazine_comment_path(@magazine, comment), method: "delete", class: "float-right info-size-sm luxury_space btn_micro hvr-right_red",:data => {:confirm => '진짜 지워요?'} %>
+              <% end %>
+             <%end%>
+             <%end%>
+             <br>
+          </div>
+        </div>
+        </div>
+    <%end%>
+  <% else %>
+  <% end %>
+</div>
+</div>
+
+
 
 
 <style>
+.magazine_edit{
+  margin-left: 2vw;
+  margin-right: 2vw;
+  text-align: right;
+}
+.magazine_bottomlike{
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-bottom: 3vh;
+  float:left;
+}
 .magazine_header{
   margin-left: 2vw;
   margin-right: 2vw;
+  border-bottom: thick double #ffa500;
+  margin-bottom: 3vh;
+}
+.magazine_header_likes{
+  font-size: 0.75rem;
 }
 .magazine_container{
     
@@ -102,10 +144,35 @@
   font-size:3rem;
 }
 .magazine_image{
-  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;  
 }
 .magazine_content{
-  
+  display: block;
+  margin-left: auto;
+  margin-top:4vh;
+  margin-right: auto;
+  width: 70%;
 }
-  
+
+.magazine_comments{
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-bottom: 3vh;
+  border-top: dashed grey;
+}
+.magazine_comments_group{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3vh;
+}
+.magazine_delete{
+  font-size: 2px;
+}
+.magazine_createcomment{
+  margin-bottom: 6vh;
+}
 </style>

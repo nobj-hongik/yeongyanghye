@@ -74,12 +74,39 @@ input[class="magazine_checkboxinput"]:checked + label {
     font-weight: bold;
 }
 
-h1{
+.y-mag-subtitle-1{
     text-align: center;
-    color: black;
+    
 }
 
-h2{
-    text-align: left;
+.y-weekly{
+    text-align: center;
     color: black;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 28px;
+    font-weight: 200;
+    color: #f78429;
+}
+
+.y-carousel-title{
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 42px;
+    
+    
+}
+.carousel-item{
+    height:60vh;
+    
+}
+.d-block.w-100{
+    background-repeat:no-repeat;
+    text-align:  center;
+    vertical-align : middle;
+    overflow: hidden;
+}
+
+.y-mag-subtitle-1{
+    background-color: #f78429;
 }

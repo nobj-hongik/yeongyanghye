@@ -11,8 +11,10 @@
   <%= f.hidden_field :eventime, value: Date.today %>
   <%=f.submit "출첵하기", class: "diarycheck" %>
 <% end %>
-<% else %>       
+<% else %>  
+  <div class="signincheck">
   <%= "이미 출첵했어요"%>
+  </div>
 <% end %>
 </section>
 
@@ -20,6 +22,7 @@
 <div class="container">
 
 <br>
+<i style="color:#ffa500;" class="fa fa-calendar"></i>
 <a href = "/calendar/show">달력보기</a>
 <hr>
 <h2>좋아요한 메거진</h2>
@@ -94,5 +97,8 @@
   overflow: hidden; 
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.signincheck{
+  color:white;
 }
 </style>
