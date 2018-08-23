@@ -1,7 +1,7 @@
 <div class="comment_cool">
   <div class="row">
     <div class="col-12">
-      <span class="luxury_space semi_bold-font"><%= comment.user.email %></span>
+      <span class="luxury_space semi_bold-font"><%= comment.user.name.present? ? comment.user.name : comment.user.email %> </span>
       <span class="float-right time_for"><%= comment.created_at.strftime("%Y.%m.%d %I:%M%p") %></span>
       <p class="com_content"><%= comment.content %></p>
       <% if !user_signed_in? %>

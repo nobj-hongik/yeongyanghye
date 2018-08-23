@@ -91,7 +91,7 @@ class User < ActiveRecord::Base
 
           if user.nil? && auth.provider=="facebook"
             user = User.new(
-              profile_image:  auth.info.image,
+              profile_img:  auth.info.image,
               image:  auth.info.image,
               name: auth.info.name,
               email: auth.info.email || "#{auth.uid}@yeongyanghye.com",

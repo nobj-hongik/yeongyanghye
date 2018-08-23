@@ -2,7 +2,7 @@
   <span class="bold-font orange">Q. </span><%= @question.title %>
 </h2>
 <p class="semi_slim-font luxury_space info-size mg-desc">
-  <%= @question.user.email %> | <%= @question.created_at.strftime("%Y-%m-%d at %I:%M%p") %>
+  <%= @question.user.name.present? ? @question.user.name : @question.user.email %> | <%= @question.created_at.strftime("%Y-%m-%d at %I:%M%p") %>
 </p>
 <span class="cate_wrap"><%= @question.category %></span>
 <% if @question.owner_selected? %>

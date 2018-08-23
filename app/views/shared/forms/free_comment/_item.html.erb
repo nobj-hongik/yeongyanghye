@@ -1,7 +1,7 @@
 <div class="comment_cool">
   <div class="row">
     <div class="col-12">
-      <span class="luxury_space semi_bold-font"><%= comment.user.email %></span>
+      <span class="luxury_space semi_bold-font"><%= comment.user.name.present? ? comment.user.name : comment.user.email %></span>
       <p class="com_content"><%= comment.comment %></p>
       <% if !user_signed_in? %>
       <%else%>

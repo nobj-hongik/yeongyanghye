@@ -1,8 +1,8 @@
 <h2 class="title_size slim-font mg-top-med">
-  <span class="bold-font orange">A. </span><%= answer.user.email %>님의 답변
+  <span class="bold-font orange">A. </span><%= answer.user.name.present? ? answer.user.name : answer.user.email %>님의 답변
 </h2>
 <p class="semi_slim-font luxury_space info-size">
-  <%= answer.user.email %> | <%= answer.created_at.strftime("%Y-%m-%d at %I:%M%p") %>
+  <%= answer.user.name.present? ? answer.user.name : answer.user.email %> | <%= answer.created_at.strftime("%Y-%m-%d at %I:%M%p") %>
 </p>
 <% if @question.user == current_user %>
   <% if answer.is_selected? && @question.owner_selected? %>
