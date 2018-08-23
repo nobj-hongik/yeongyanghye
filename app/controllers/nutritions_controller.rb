@@ -115,7 +115,7 @@ class NutritionsController < ApplicationController
     def make_params_ary
           @funcwords = "defaultword"
           @exceptwords = "-defaultword"
-      for i in 0..11
+      for i in 0..13
         if params[:func]
           @funcwords = @funcwords + ' +' + params[:func][i] + '*' if params[:func][i]
         end  
