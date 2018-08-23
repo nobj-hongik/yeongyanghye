@@ -17,7 +17,7 @@
           <%= link_to current_user.is_like?(@question) ? "안물.." : "?궁금", question_question_like_path(question_id: @question.id) ,method: :post, class: "small_compact_btn hvr-right float-left"%>
         <% end %>
       </div>
-      <% if !current_user == @question.user %>
+      <% if current_user != @question.user %>
         <%= link_to "답변하기", new_question_answer_path(params[:id]), class: "small_compact_btn_3 hvr-right_luxury float-right"%> 
       <% end %>
       <br><br><br>
