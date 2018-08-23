@@ -12,13 +12,12 @@ ActiveAdmin.register RefinedEntry do
 #   permitted
 # end
   csv do
-    column :howtext
     column :name
+    column :howtext
     column :function
     column :company
     column :shape
-    column :howword
     column :except
-    column :companyinfo
+    column :stdr_stnd
   end
 end

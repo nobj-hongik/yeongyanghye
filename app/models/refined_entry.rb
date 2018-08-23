@@ -45,7 +45,27 @@ class RefinedEntry < ApplicationRecord
     end
   end
 
-  def self.add_stdr_stnd
+  def self.howtext_word
+    self.all.each do |e|
+      target = NutriTmp.where(name: e.name, company: e.company)
+      if target.size == 0
+        next
+      elsif target.size > 0
+        target = NutriTmp.where(name: e.name, company: e.company, function: e.function)
+      end
+      e.update(howtext: target.first.howtext,howword: target.first.howword)
+    end
+  end
 
+  def self.add_stdr_stnd
+    self.all.each do |e|
+      target = NutriTmp.where(name: e.name, company: e.company)
+      if target.size == 0
+        next
+      elsif target.size > 0
+        target = NutriTmp.where(name: e.name, company: e.company, function: e.function)
+      end
+      e.update(stdr_stnd: target.first.stdr_stnd)
+    end
   end
 end
