@@ -4,6 +4,13 @@ class QuestionsController < ApplicationController
   before_action :load_object, only: [:show, :edit, :update, :destroy]
   before_action :check_ownership, only: [:edit, :update, :destroy]
 
+  def ajax_category
+    @questions = Question.where(category: params[:category]).order('created_at DESC')
+    respond_to do |format|
+        format.js
+    end
+  end
+
   def index
     if params[:category]
       @questions = Question.where(category: params[:category]).order('created_at DESC')

@@ -53,6 +53,7 @@ end
   end
   get 'calendar/show'
   get "/ajax_category/:category", to: "magazines#ajax_category", as: "magazine_ajax"
+  get "/question_category/:category", to: "questions#ajax_category", as: "question_ajax"
   resources :refined_entries, only: :index
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

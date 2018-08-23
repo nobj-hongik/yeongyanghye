@@ -9,24 +9,20 @@
       <p class="semi_slim-font mg-bottom-med luxury_space info-size">
         세상의 모든 영양 지식, 영양해에게 물어봐!
       </p>
-      <% @questions.each do |question| %>
-        <a href="/questions/<%=question.id%>">
-          <div class="question_div">
-          <span class="cate_wrap"><%= question.category %></span>
-          <% if question.answer_already_selected %>
-            <span class="cate_wrap green_back">채택 완료!</span>
-          <% else %>
-            <span class="cate_wrap orange_back">채택 대기중</span>
+      <div class="sub_nav text-center">
+        <div id="navigation-wrapper_q">
+          <% Question::CATEGORY.each do |k,v| %>
+            <%= link_to question_ajax_path(v), :remote => true , class:"q_cate" do %>
+              <div class="menu_q">
+                <span><%= k %></span>
+              </div>
+            <% end %>
           <% end %>
-          <p class="luxury_space mg-top-sm semi_bold-font sub_size"><%= question.title %></p>
-          <% if question.owner_selected? %>
-            <p class="slim-font info-size">채택이 완료된 질문이에요</p>
-          <% else %>
-            <p class="slim-font info-size"><%= question.question_likes.size%>명이 답변을 기다리고 있어요</p>
-          <% end %>
-          </div>
-        </a>
-      <% end %>
+        </div>
+      </div>
+      <div id="ajax_question">
+        <%= render partial: 'questions/question_lists' %>
+      </div>
     </div>
     <div class="col-xs-0 col-md-1 col-lg-2 col-xl-3"></div>
   </div>
