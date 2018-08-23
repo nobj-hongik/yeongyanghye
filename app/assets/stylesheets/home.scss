@@ -469,6 +469,29 @@
   border-radius:2px;
   z-index:1;
 }
+.sm_div{
+  padding-top:80px;
+  height:200px;
+}
+.no-pr-strong{
+  padding-right:0px!important;
+}
+.no-pl-strong{
+  padding-left:0px!important;
+}
+.mag_div{
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
+  min-height: 80%;
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-perspective: 250px;
+  -o-perspective: 250px;
+  perspective: 250px;
+  margin-bottom:0px;
+}
 #nav_logo{
   background-color: orange;
   margin-right:10rem;
@@ -485,7 +508,6 @@
   color: white;
   transition: 0.4s;
 }
-
 .sm_div{
   padding-top:80px;
   height:200px;
@@ -537,7 +559,6 @@
   letter-spacing: 0.07em;
   font-weight: 700;
 }
-
 .index{
   background-repeat:no-repeat;
   background-position:  center;
