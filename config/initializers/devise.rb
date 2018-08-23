@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '7553e35d70d1c31ebaf53fe95e92364fbfc64ab2f3625d7208d1a98ac93b43e55ebd73bc9dfe9b95a03b7e9b363c56434d61aaeeea19c444409732f7725bf8a7'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -257,10 +257,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
   config.omniauth :facebook, ENV["Facebook_Key"], ENV["Facebook_Secret"]
   config.omniauth :google_oauth2, ENV["Google_Key"], ENV["Google_Secret"]
-  config.omniauth :kakao, ENV["674b81e77c8b32353d3c6bca3abcd076"], :redirect_path => "/auth/kakao/callback"
+  config.omniauth :kakao, ENV["KAKAO_CLIENT_ID"], :redirect_path => "/users/auth/kakao/callback"
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
