@@ -9,4 +9,43 @@ class RefinedEntry < ApplicationRecord
       end
     end
   end
+
+  def self.init_entries
+    csv_text = File.read(Rails.root.join('lib', 'csv', 'readytogo.CSV'))
+    csv = CSV.parse(csv_text, :headers => true, :encoding => 'UTF-8')
+    csv.each do |row|
+      t = self.new
+      t.howtext = row['Howtext']
+      t.name = row['이름']
+      t.function = row['Function']
+      t.company = row['Company']
+      t.shape = row['Shape']
+      t.howword = row['Howword']
+      t.except = row['Except']
+      t.companyinfo = row['Companyinfo']
+      t.save
+    end
+  end
+
+  def self.image_hunter
+    target = self.all.where(image: nil)
+    target.each do |t|
+      query_s = (t.company.to_s.gsub(/\s+/, "") + " " + t.name.to_s).gsub(/\(.*?\)/, '').gsub("주식회사","")
+      search_results = Naver::Search.shop(query: query_s)
+      sleep 0.1
+      if search_results.items[0].blank?
+        t.destroy
+      elsif search_results.items[0].image.blank?
+        next
+      else
+        image = search_results.items[0].image
+        t.update(image: image)
+        puts query_s
+      end
+    end
+  end
+
+  def self.add_stdr_stnd
+
+  end
 end

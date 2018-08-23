@@ -12,6 +12,7 @@ class NutriTmp < ApplicationRecord
       t.howword = row['섭취법단어']
       t.except = row['주의사항']
       t.companyinfo = row['기업정보']
+      t.stdr_stnd = row['STDR_STND']
       t.save
     end
   end
