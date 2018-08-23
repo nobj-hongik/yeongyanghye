@@ -13,6 +13,7 @@ ActiveAdmin.register RefinedEntry do
 # end
   csv do
     column :name
+    column :image
     column :howtext
     column :function
     column :company
