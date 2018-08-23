@@ -9,7 +9,7 @@ class Magazine < ActiveRecord::Base
     제품: 0,
     한방: 1,
     운동: 2,
-    영양: 3,
+    영양: 3
   }
 
   CATEGORY = {'제품': 0, '한방': 1, '운동': 2, '영양': 3}.freeze

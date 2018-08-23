@@ -166,7 +166,7 @@
 .intro{
   width: 100%;
   height: 70vh;
-  background-color: #efefef;
+  background-color: #ffd6b8;
   text-align: center;
 }
 
@@ -267,7 +267,7 @@
     text-align: center;
   }
   .menu:hover {
-    background-color: orange;
+    background-color: #f78429;
     color: white;
     transition: 0.4s;
   }
@@ -276,6 +276,13 @@
     margin-bottom: 10px;
     display: inline-block;
   }
+
+
+
+
+
+
+
 
 .magazine-wrapper{
   width: 100%;
@@ -467,7 +474,7 @@
   //background-color: rgba(170, 170, 170,0.6) !important;
   border-radius:2px;
   z-index:1;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.12) !important;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.15) !important;
   box-sizing: border-box;
   height: 7.5vh;
 }
@@ -498,7 +505,11 @@
   background-color: orange;
   margin-right:10rem;
   border-radius:2px;
+  height: 7.5vh;
+  width: 5vw;
 }
+
+
 .navbar-custom2{
   opacity: 0.5;
   position: fixed; 
@@ -507,9 +518,8 @@
 .nav-item{
   margin-right:3rem;
 }
-.nav-item:hover {
-  background-color: orange;
-  color: white;
+.nav-item a:hover{
+  color: #f78429;
   transition: 0.4s;
 }
 .sm_div{
