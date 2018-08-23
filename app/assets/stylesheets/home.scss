@@ -245,7 +245,7 @@
 .magazine-title{
   padding: 48px 0 48px;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .sub-nav {
@@ -277,7 +277,11 @@
     display: inline-block;
   }
 
-
+.magazine-index{
+  height: 85vh;
+  width: 100%;
+  background-color:#ededed;
+}
 
 
 
@@ -289,7 +293,7 @@
 }
 
 .magazine{
-  background-color: white;
+  background-color: #ededed;
 }
 .height_fixer{
   height:200px;

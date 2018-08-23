@@ -93,6 +93,7 @@ input[class="magazine_checkboxinput"]:checked + label {
     text-align: left;
     color: #FFFFFF;
     font-size: 42px;
+    font-weight: 200;
 
 
 }
@@ -105,8 +106,14 @@ input[class="magazine_checkboxinput"]:checked + label {
     text-align:  center;
     vertical-align : middle;
     overflow: hidden;
+    
 }
 
 .y-mag-subtitle-1{
     background-color: #f78429;
+}
+
+img {
+  -webkit-filter: grayscale(50%) grayscale(70%);
+  filter: grayscale(50%) brightness(70%);
 }
