@@ -68,37 +68,7 @@ class NutritionsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  def result
-   
-    if params[:func]
-      # @search = params[:search]
-      # @func1 = '+' + params[:func][i] + '*'
-      # @piro = ' -' + params[:piro] + '*'
-      # @industry = ' +' + params[:skin] + '*'
-      # @computer = ' +' + params[:imuen] + '*'
-      
-      make_params_ary
-      
-      if params[:except]
-        @except = '%' + params[:except] + '%'
-      elsif
-        @except = "쓰레기값"
-      end
-      
-      if params[:mfds] == '인증'
-        @mfds = params[:mfds]
-        @nutritions = Nutrition.find_by_sql(["SELECT * FROM nutritions WHERE MATCH (function, shape, companyinfo) AGAINST ( ? IN BOOLEAN MODE)
-                                   AND except NOT LIKE  ? AND mfds = ? ", @funcwords, @except, @mfds])      
-      else
-        @nutritions = Nutrition.find_by_sql(["SELECT * FROM nutritions WHERE MATCH (function, shape, companyinfo) AGAINST ( ? IN BOOLEAN MODE)
-                                   AND except NOT LIKE  ? ", @funcwords, @except])        
-      end
-
-      # @nutritions = nutrition.find(:all, :id => ["SELECT id FROM unutritions WHERE match(title,content) against(+%?% IN BOOLEAN MODE)",@search])
-      # @nutritions = nutrition.where(:title => @search).order("created_at DESC")
-    else
-      @nutritions = Nutrition.order('created_at DESC')
-    end                                  
+                                 
     
   end
   private
@@ -112,20 +82,4 @@ class NutritionsController < ApplicationController
       params.require(:nutrition).permit(:name, :brand, :character, :function, :precaution, :user_id)
     end
     
-    def make_params_ary
-          @funcwords = "defaultword"
-          @exceptwords = "-defaultword"
-      for i in 0..13
-        if params[:func]
-          @funcwords = @funcwords + ' +' + params[:func][i] + '*' if params[:func][i]
-        end  
-      end
-      
-      for j in 0..2
-        if params[:shape]
-          @funcwords = @funcwords + ' +' + params[:shape][j] + '*' if params[:shape][j]
-        end
-      end
-      
-    end    
-end
+   

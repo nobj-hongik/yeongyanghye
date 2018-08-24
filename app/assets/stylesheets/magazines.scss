@@ -69,9 +69,12 @@ input[class="magazine_checkboxinput"]:checked + label {
 }
 
 .btn-default{
-    background-color: orange;
+    background-color: #f78429;
     color: white;
     font-weight: bold;
+    margin-bottom: 3vh;
+    float: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
 }
 
 .y-mag-subtitle-1{
@@ -116,4 +119,9 @@ input[class="magazine_checkboxinput"]:checked + label {
 img {
   -webkit-filter: grayscale(50%) grayscale(70%);
   filter: grayscale(50%) brightness(70%);
+  background-repeat:no-repeat;
+  background-position:  center;
+  background-size: cover;
+  text-align: center;
+  
 }
